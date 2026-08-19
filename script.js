@@ -579,9 +579,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 Não há limite para o que posso dar, não precisopo de tempo. 
 
-Mesmo quando este mundo for um sussurro de terra esquecido em meio às estrelas, amarei
-
-você.`;
+Mesmo quando este mundo for um sussurro de terra esquecido em meio às estrelas, amarei você.`;
 
     let letra = 0;
     let textoAtual = "";
