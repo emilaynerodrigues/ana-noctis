@@ -573,13 +573,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     assinatura.classList.remove("show");
 
-    const carta = `Ana, acho que tudo se resume a isso:
+    const carta = `Ana, o que sinto se resume a isso:
 
-"Passei séculos perambulando o mundo de impérios a reinos e desertos, nunca me estabeleci, jamais parei... nem por um momento.
+"- Eu amo você. 
 
-Estava sempre olhando para o horizonte, sempre imaginando o que esperava do outro lado do oceano seguinte, sobre a montanha seguinte.
+Não há limite para o que posso dar, não precisopo de tempo. 
 
-Mas acho... acho que o tempo todo, durante todos aqueles séculos, só estava procurando por você."`;
+Mesmo quando este mundo for um sussurro de terra esquecido em meio às estrelas, amarei
+
+você.`;
 
     let letra = 0;
     let textoAtual = "";
