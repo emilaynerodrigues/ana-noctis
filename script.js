@@ -573,9 +573,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     assinatura.classList.remove("show");
 
-    const carta = `Ana, o que sinto se resume a isso:
+    const carta = `Ana, me resumo em:
 
-"- Eu amo você. 
+"Eu amo você. 
 
 Não há limite para o que posso dar, não preciso de tempo. 
 
