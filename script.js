@@ -577,7 +577,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 "- Eu amo você. 
 
-Não há limite para o que posso dar, não precisopo de tempo. 
+Não há limite para o que posso dar, não preciso de tempo. 
 
 Mesmo quando este mundo for um sussurro de terra esquecido em meio às estrelas, amarei você.`;
 
