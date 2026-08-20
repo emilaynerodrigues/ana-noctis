@@ -581,13 +581,19 @@ Sou completamente apaixonada por você e soube disso desde a primeira que te bei
 
 É o que sou, é o que é. 
 
-Tem algo, existe algo em mim, desde o início, que grita por você. Como você espera que eu não ame você? 
+Tem algo, desde o início, que grita por você. Como você espera que eu não ame você? 
 
 Tudo que você tem escolhido ser agora, não te resume, mas até nesses momentos eu te escolho.
 
 E tem sido horrível, não ter você e saber que você não consegue me escolher. 
 
 Por que te custa acreditar em mim?
+
+Por que você não pode se deixar ser amada?
+
+O que faltou? Eu sempre fui demais, porque você merece demais e eu não podia ignorar isso.
+
+Até o pensamento de desistir de você me sufoca, mas você dificulta tanto e tem feito de tudo pra isso acontecer, mas ainda assim eu não consigo e fico sozinha, esperando que você me permita.
 
 Eu amo você. `;
 
