@@ -601,8 +601,6 @@ Eu não sou louca e obcecada, como você provavelmente possa estar pensando.
 
 Sou simplesmente apaixonada por você. 
 
-Faz o que você precisa fazer, mas não me esquece. Não esquece dos momentos, dos segredos, das risadas que compartilhamos, do nosso carinho.
-
 Não posso desistir de você.
 
 Por favor, permita que a gente aconteça, no amanhã, aos poucos, devagar, no simples, no pouco, no tudo.
