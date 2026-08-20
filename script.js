@@ -587,19 +587,13 @@ Tudo que você tem escolhido ser agora não te resume, mas até nesses momentos 
 
 E tem sido horrível não ter você e saber que você não me escolhe. 
 
-Por que te custa acreditar em mim?
+Por que te custa acreditar?
 
-Por que você tem medo de mim?
+Eu entendo, eu sei o que acontece, mas por que você não se permite ser amada?
 
-Por que você não permite que eu te ame como você deve ser amada?
+Você não é pouco, você não é nada. Você continua sendo meu sonho. Tudo o que eu disse foi verdadeiro e eu sei que você ainda sente algo.
 
-Você não é pouco, você não é nada.
-
-O que faltou? O que eu posso fazer?
-
-Eu não sou louca e obcecada, como você provavelmente possa estar pensando.
-
-Sou simplesmente apaixonada por você. 
+O que eu posso fazer? Não é impossível. 
 
 Não posso desistir de você.
 
