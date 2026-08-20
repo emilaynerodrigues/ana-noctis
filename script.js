@@ -575,27 +575,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const carta = `Ana, agora sou eu:
 
-Eu amo você. 
+Sou completamente apaixonada por você e soube disso desde a primeira que te beijei, mas você não permitiu que fosse dito em outra circunstância e mais uma vez resolveu me bloquear.
 
-Sou completamente apaixonada por você e soube disso desde a primeira que te beijei, mas você não permitiu que fosse dito em outra circunstância e mais uma vez resolveu me tirar.
+É o que é, é o que sinto. 
 
-É o que sou, é o que é. 
+Desde o início, sinto algo em mim gritando por você e eu já tive tantos avisos. Como você espera que eu não te ame? Se até mesmo longe o sentimento não para de crescer. 
 
-Tem algo, desde o início, que grita por você. Como você espera que eu não ame você? 
+Tudo que você tem escolhido ser agora não te resume, mas até nesses momentos eu te escolho.
 
-Tudo que você tem escolhido ser agora, não te resume, mas até nesses momentos eu te escolho.
-
-E tem sido horrível, não ter você e saber que você não consegue me escolher. 
+E tem sido horrível não ter você e saber que você não me escolhe. 
 
 Por que te custa acreditar em mim?
 
-Por que você não pode se deixar ser amada?
+Por que você tem medo de mim?
 
-O que faltou? Eu sempre fui demais, porque você merece demais e eu não podia ignorar isso.
+Por que você não permite que eu te ame você deve ser amada?
 
-Até o pensamento de desistir de você me sufoca, mas você dificulta tanto e tem feito de tudo pra isso acontecer, mas ainda assim eu não consigo e fico sozinha, esperando que você me permita.
+Você não é pouco, você não é nada.
 
-Eu amo você. `;
+O que faltou? O que eu posso fazer?
+
+Eu não sou louca e obcecada, como você provavelmente possa estar pensando.
+
+Sou simplesmente apaixonada por você. 
+
+Desistir de você é sufocante. Por favor, permita que a gente aconteça, no amanhã, aos poucos, devagar, no simples, no pouco, no tudo.
+
+Eu amo você.`;
 
     let letra = 0;
     let textoAtual = "";
