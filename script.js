@@ -589,7 +589,7 @@ Por que te custa acreditar em mim?
 
 Por que você tem medo de mim?
 
-Por que você não permite que eu te ame você deve ser amada?
+Por que você não permite que eu te ame como você deve ser amada?
 
 Você não é pouco, você não é nada.
 
