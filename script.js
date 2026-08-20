@@ -575,6 +575,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const carta = `Ana, agora sou eu:
 
+Eu amo você.
+
 Sou completamente apaixonada por você e soube disso desde a primeira que te beijei, mas você não permitiu que fosse dito em outra circunstância e mais uma vez resolveu me bloquear.
 
 É o que é, é o que sinto. 
@@ -599,9 +601,7 @@ Eu não sou louca e obcecada, como você provavelmente possa estar pensando.
 
 Sou simplesmente apaixonada por você. 
 
-Vive. 
-
-Faz o que você precisa fazer, mas não me esquece e volta. Não esquece dos momentos, dos segredos, das risadas que compartilhamos, do nosso carinho.
+Faz o que você precisa fazer, mas não me esquece. Não esquece dos momentos, dos segredos, das risadas que compartilhamos, do nosso carinho.
 
 Não posso desistir de você.
 
