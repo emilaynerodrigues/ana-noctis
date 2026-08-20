@@ -573,13 +573,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     assinatura.classList.remove("show");
 
-    const carta = `Ana, me resumo em:
+    const carta = `Ana, agora sou eu:
 
-"Eu amo você. 
+Eu amo você. 
 
-Não há limite para o que posso dar, não preciso de tempo. 
+Sou completamente apaixonada por você e soube disso desde a primeira que te beijei, mas você não permitiu que fosse dito em outra circunstância e mais uma vez resolveu me tirar.
 
-Mesmo quando este mundo for um sussurro de terra esquecido em meio às estrelas, amarei você."`;
+É o que sou, é o que é. 
+
+Tem algo, existe algo em mim, desde o início, que grita por você. Como você espera que eu não ame você? 
+
+Tudo que você tem escolhido ser agora, não te resume, mas até nesses momentos eu te escolho.
+
+E tem sido horrível, não ter você e saber que você não consegue me escolher. 
+
+Por que te custa acreditar em mim?
+
+Eu amo você. `;
 
     let letra = 0;
     let textoAtual = "";
