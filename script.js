@@ -577,7 +577,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 Eu amo você.
 
-Sou completamente apaixonada por você e soube disso desde a primeira que te beijei.
+Sou completamente apaixonada por você e soube disso desde a primeira vez que te beijei.
 
 É o que é, é o que sinto. 
 
