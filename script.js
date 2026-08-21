@@ -581,17 +581,13 @@ Sou completamente apaixonada por você e soube disso desde a primeira que te bei
 
 É o que é, é o que sinto. 
 
-Por que te custa acreditar? Você está me apagando...
+Por que te custa acreditar? Por que você está me apagando?
 
-Desde o início, sinto algo em mim gritando por você e eu já tive tantos avisos. Como você espera que eu não te ame? Se até mesmo longe o sentimento não para de crescer. 
+Desde o início, sinto algo em mim gritando por você e eu já tive tantos avisos. Como você espera que eu não te ame? 
 
-Tudo que você tem escolhido ser agora não te resume, mas até nesses momentos eu te escolho.
+Eu entendo, eu sei, eu sinto você.
 
-E tem sido horrível não ter você e saber que você não me escolhe. 
-
-Eu entendo, eu sei o que acontece, mas por que você não se permite ser amada?
-
-Você não é pouco, você não é nada. Você continua sendo meu sonho. Tudo o que eu disse foi verdadeiro e eu sei que você ainda sente algo.
+Você não é pouco, você não é nada. Você continua sendo meu sonho.
 
 O que eu posso fazer? Não é impossível. 
 
@@ -599,7 +595,7 @@ Não posso desistir de você.
 
 Por favor, permita que a gente aconteça, no amanhã, aos poucos, devagar, no simples, no pouco, no tudo.
 
-Eu amo você.`;
+Eu amo e sinto saudades de -você-.`;
 
     let letra = 0;
     let textoAtual = "";
