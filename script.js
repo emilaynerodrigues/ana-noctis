@@ -581,7 +581,7 @@ Sou completamente apaixonada por você e soube disso desde a primeira vez que te
 
 É o que é, é o que sinto. 
 
-Por que te custa acreditar? Por que você está me apagando?
+Por que te custa acreditar? Como me apaga tão facilmente?
 
 Desde o início, sinto algo em mim gritando por você e eu já tive tantos avisos. Como você espera que eu não te ame? 
 
