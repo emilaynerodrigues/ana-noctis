@@ -587,7 +587,7 @@ Tudo que você tem escolhido ser agora não te resume, mas até nesses momentos 
 
 E tem sido horrível não ter você e saber que você não me escolhe. 
 
-Por que te custa acreditar?
+Por que te custa acreditar? Você está me apagando.
 
 Eu entendo, eu sei o que acontece, mas por que você não se permite ser amada?
 
