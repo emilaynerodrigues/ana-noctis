@@ -577,17 +577,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 Eu amo você.
 
-Sou completamente apaixonada por você e soube disso desde a primeira que te beijei, mas você não permitiu que fosse dito em outra circunstância e mais uma vez resolveu me bloquear.
+Sou completamente apaixonada por você e soube disso desde a primeira que te beijei.
 
 É o que é, é o que sinto. 
+
+Por que te custa acreditar? Você está me apagando...
 
 Desde o início, sinto algo em mim gritando por você e eu já tive tantos avisos. Como você espera que eu não te ame? Se até mesmo longe o sentimento não para de crescer. 
 
 Tudo que você tem escolhido ser agora não te resume, mas até nesses momentos eu te escolho.
 
 E tem sido horrível não ter você e saber que você não me escolhe. 
-
-Por que te custa acreditar? Você está me apagando.
 
 Eu entendo, eu sei o que acontece, mas por que você não se permite ser amada?
 
