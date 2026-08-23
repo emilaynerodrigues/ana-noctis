@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  //FUNÇÃO PARA ESCREVER FRASE
+  // =====================================================
+  // FRASE
+  // =====================================================
 
   const frases = ["Até que a escuridão nos reivindique!"];
-
   const texto = document.getElementById("texto");
 
   let frase = 0;
@@ -11,8 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let escrevendo = false;
 
   function escrever() {
-    // Impede que a função seja iniciada duas vezes
-    if (escrevendo) return;
+    if (escrevendo || !texto) return;
 
     escrevendo = true;
 
@@ -20,33 +20,31 @@ document.addEventListener("DOMContentLoaded", () => {
       if (letra < frases[frase].length) {
         textoAtual += frases[frase][letra];
         texto.textContent = textoAtual;
-
         letra++;
 
         setTimeout(digitar, 70);
-      } else {
-        // Se chegou na última frase, para aqui
-        if (frase === frases.length - 1) {
-          escrevendo = false;
-          return;
-        }
-
-        setTimeout(() => {
-          textoAtual = "";
-          texto.textContent = "";
-
-          frase++;
-          letra = 0;
-
-          digitar();
-        }, 3000);
+        return;
       }
+
+      if (frase === frases.length - 1) {
+        escrevendo = false;
+        return;
+      }
+
+      setTimeout(() => {
+        textoAtual = "";
+        texto.textContent = "";
+        frase++;
+        letra = 0;
+        digitar();
+      }, 3000);
     }
 
     digitar();
   }
+
   // =====================================================
-  // DESENHAR UM PATH
+  // DESENHAR PATH
   // =====================================================
 
   function desenharPath(elemento, duracao = 1000) {
@@ -68,32 +66,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       elemento.style.opacity = "1";
 
-      elemento.getBoundingClientRect();
-
-      elemento.style.strokeDashoffset = "0";
+      requestAnimationFrame(() => {
+        elemento.style.strokeDashoffset = "0";
+      });
 
       setTimeout(resolve, duracao);
     });
-  }
-
-  // =====================================================
-  // DESENHAR GRUPO
-  // UM PATH POR VEZ
-  // =====================================================
-
-  async function desenharGrupo(id, duracao = 800) {
-    const grupo = document.getElementById(id);
-
-    if (!grupo) {
-      console.warn(`Grupo não encontrado: ${id}`);
-      return;
-    }
-
-    const paths = grupo.querySelectorAll("path");
-
-    for (const path of paths) {
-      await desenharPath(path, duracao);
-    }
   }
 
   // =====================================================
@@ -103,14 +81,84 @@ document.addEventListener("DOMContentLoaded", () => {
   async function desenharGrupoJunto(id, duracao = 800) {
     const grupo = document.getElementById(id);
 
-    if (!grupo) {
-      console.warn(`Grupo não encontrado: ${id}`);
-      return;
-    }
+    if (!grupo) return;
 
     const paths = [...grupo.querySelectorAll("path")];
 
     await Promise.all(paths.map((path) => desenharPath(path, duracao)));
+  }
+
+  // =====================================================
+  // CONSTELAÇÕES
+  // =====================================================
+
+  function obterEstrelasConstelacoes() {
+    return [...document.querySelectorAll("#estrelas-constelacoes path")].filter(
+      (path) => !path.closest(".constelacao-linha"),
+    );
+  }
+
+  function obterLinhasConstelacoes() {
+    return [
+      ...document.querySelectorAll(
+        "#estrelas-constelacoes .constelacao-linha path",
+      ),
+    ];
+  }
+
+  // =====================================================
+  // ESTRELAS DO DIA
+  // =====================================================
+
+  async function desenharEstrelasDoDia() {
+    const estrelas = [
+      ...document.querySelectorAll("#estrelas-brancas path"),
+      ...obterEstrelasConstelacoes(),
+    ];
+
+    estrelas.forEach((estrela) => {
+      estrela.style.stroke = "#010101";
+      estrela.style.fill = "none";
+      estrela.style.opacity = "0";
+
+      const comprimento = estrela.getTotalLength();
+
+      estrela.style.strokeDasharray = comprimento;
+      estrela.style.strokeDashoffset = comprimento;
+    });
+
+    document.body.getBoundingClientRect();
+
+    await Promise.all(
+      estrelas.map((estrela) => {
+        return new Promise((resolve) => {
+          const atraso = Math.random() * 80;
+          const duracao = 500 + Math.random() * 350;
+
+          setTimeout(() => {
+            estrela.style.transition = "opacity 180ms ease";
+            estrela.style.opacity = "1";
+
+            setTimeout(() => {
+              estrela.style.transition = `stroke-dashoffset ${duracao}ms cubic-bezier(0.25, 0.8, 0.25, 1)`;
+
+              requestAnimationFrame(() => {
+                estrela.style.strokeDashoffset = "0";
+              });
+
+              setTimeout(resolve, duracao);
+            }, 80);
+          }, atraso);
+        });
+      }),
+    );
+
+    estrelas.forEach((estrela) => {
+      estrela.style.opacity = "1";
+      estrela.style.strokeDasharray = "none";
+      estrela.style.strokeDashoffset = "0";
+      estrela.style.transition = "none";
+    });
   }
 
   // =====================================================
@@ -139,84 +187,46 @@ document.addEventListener("DOMContentLoaded", () => {
       "janela16",
     ];
 
-    // =================================================
-    // DURAÇÕES
-    // =================================================
-
     const duracaoEstrutura = 15000;
     const duracaoJanelas = 1200;
-
-    // =================================================
-    // PREPARAR ESTRUTURA
-    // =================================================
 
     if (estrutura) {
       const comprimento = estrutura.getTotalLength();
 
       estrutura.style.strokeDasharray = comprimento;
-
       estrutura.style.strokeDashoffset = comprimento;
-
       estrutura.style.opacity = "1";
-    }
 
-    // =================================================
-    // PREPARAR JANELAS
-    // =================================================
-
-    const elementosJanelas = [];
-
-    for (const id of janelas) {
-      const janela = document.getElementById(id);
-
-      if (!janela) continue;
-
-      const comprimento = janela.getTotalLength();
-
-      janela.style.strokeDasharray = comprimento;
-
-      janela.style.strokeDashoffset = comprimento;
-
-      janela.style.opacity = "1";
-
-      elementosJanelas.push(janela);
-    }
-
-    // =================================================
-    // FORÇAR ESTADO INICIAL
-    // =================================================
-
-    if (estrutura) {
       estrutura.getBoundingClientRect();
-    }
 
-    elementosJanelas.forEach((janela) => {
-      janela.getBoundingClientRect();
-    });
-
-    // =================================================
-    // COMEÇAR ESTRUTURA
-    // =================================================
-
-    if (estrutura) {
       estrutura.style.transition = `stroke-dashoffset ${duracaoEstrutura}ms linear`;
 
       estrutura.style.strokeDashoffset = "0";
     }
 
-    // =================================================
-    // COMEÇAR JANELAS
-    // =================================================
+    const elementosJanelas = [];
+
+    janelas.forEach((id) => {
+      const janela = document.getElementById(id);
+
+      if (!janela) return;
+
+      const comprimento = janela.getTotalLength();
+
+      janela.style.strokeDasharray = comprimento;
+      janela.style.strokeDashoffset = comprimento;
+      janela.style.opacity = "1";
+
+      elementosJanelas.push(janela);
+    });
 
     elementosJanelas.forEach((janela) => {
+      janela.getBoundingClientRect();
+
       janela.style.transition = `stroke-dashoffset ${duracaoJanelas}ms linear`;
 
       janela.style.strokeDashoffset = "0";
     });
-
-    // =================================================
-    // ESPERAR ESTRUTURA
-    // =================================================
 
     await new Promise((resolve) => {
       setTimeout(resolve, duracaoEstrutura);
@@ -224,43 +234,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =====================================================
-  // ESPADA
-  // =====================================================
-
-  async function desenharEspada() {
-    const partes = [
-      document.getElementById("parte-preta"),
-
-      document.getElementById("pedra-vermelha"),
-
-      document.getElementById("parte-dourada"),
-
-      ...document.querySelectorAll("#lamina path"),
-    ].filter(Boolean);
-
-    await Promise.all(partes.map((parte) => desenharPath(parte, 2500)));
-  }
-
-  // =====================================================
-  // REDESENHAR UM PATH EM BRANCO
+  // REDESENHAR PATH EM BRANCO
   // =====================================================
 
   function redesenharPathEmBranco(path, duracao = 800) {
     return new Promise((resolve) => {
       const comprimento = path.getTotalLength();
 
-      // guarda a cor original
-      const strokeOriginal = getComputedStyle(path).stroke;
-
-      // cria uma cópia exatamente por cima
       const clone = path.cloneNode(true);
 
       clone.removeAttribute("id");
-
       clone.style.stroke = "#FFFFFF";
       clone.style.fill = "none";
       clone.style.opacity = "1";
-
       clone.style.strokeDasharray = comprimento;
       clone.style.strokeDashoffset = comprimento;
 
@@ -268,13 +254,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       clone.getBoundingClientRect();
 
-      clone.style.transition = `
-            stroke-dashoffset ${duracao}ms linear
-        `;
+      clone.style.transition = `stroke-dashoffset ${duracao}ms linear`;
 
-      path.style.transition = `
-            stroke ${duracao}ms linear
-        `;
+      path.style.transition = `stroke ${duracao}ms linear`;
 
       requestAnimationFrame(() => {
         clone.style.strokeDashoffset = "0";
@@ -282,7 +264,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       setTimeout(() => {
-        // congela o estado final antes de remover o clone
         path.style.transition = "none";
         path.style.stroke = "#FFFFFF";
 
@@ -294,20 +275,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =====================================================
-  // REDESENHAR ESPADA NA COR AZUL ESCURA
+  // ESPADA NOTURNA
   // =====================================================
 
   async function desenharEspadaNoturna() {
     const espada = document.getElementById("espada");
 
+    if (!espada) return;
+
     const partes = [
       document.getElementById("parte-preta"),
       document.getElementById("pedra-vermelha"),
       document.getElementById("parte-dourada"),
-      ...espada.querySelectorAll("#lamina path"),
+      ...document.querySelectorAll("#espada #lamina path"),
     ].filter(Boolean);
 
-    // deixa só a espada invisível
     espada.style.opacity = "1";
 
     partes.forEach((parte) => {
@@ -316,84 +298,224 @@ document.addEventListener("DOMContentLoaded", () => {
       parte.style.opacity = "1";
       parte.style.stroke = "#FFFFFF";
       parte.style.fill = "none";
-
       parte.style.transition = "none";
-      parte.style.strokeDasharray = "";
-      parte.style.strokeDashoffset = "";
-
-      parte.getBoundingClientRect();
-
       parte.style.strokeDasharray = comprimento;
       parte.style.strokeDashoffset = comprimento;
     });
 
     espada.getBoundingClientRect();
 
-    partes.forEach((parte) => {
-      parte.style.transition = "stroke-dashoffset 7000ms ease";
-      parte.style.strokeDashoffset = "0";
+    requestAnimationFrame(() => {
+      partes.forEach((parte) => {
+        parte.style.transition = "stroke-dashoffset 7000ms ease";
+
+        parte.style.strokeDashoffset = "0";
+      });
     });
 
-    await new Promise((r) => setTimeout(r, 7000));
+    await new Promise((resolve) => {
+      setTimeout(resolve, 7000);
+    });
 
-    // preenche sem redesenhar novamente
     partes.forEach((parte) => {
       parte.style.transition = "fill 2500ms ease";
       parte.style.fill = "#1E2C4F";
       parte.style.stroke = "#FFFFFF";
     });
+
+    await new Promise((resolve) => {
+      setTimeout(resolve, 2500);
+    });
   }
+
   // =====================================================
-  // REDESENHAR TODO O CENÁRIO EM BRANCO
-  // EXCETO A ESPADA
+  // ESTRELAS BRANCAS
+  // =====================================================
+
+  function redesenharEstrelaBranca(estrela, duracao = 1200) {
+    return new Promise((resolve) => {
+      if (!estrela) {
+        resolve();
+        return;
+      }
+
+      const comprimento = estrela.getTotalLength();
+
+      estrela.style.stroke = "#010101";
+      estrela.style.fill = "none";
+      estrela.style.opacity = "1";
+      estrela.style.strokeDasharray = comprimento;
+      estrela.style.strokeDashoffset = comprimento;
+
+      estrela.getBoundingClientRect();
+
+      estrela.style.transition = `
+        stroke ${duracao}ms linear,
+        stroke-dashoffset ${duracao}ms ease
+      `;
+
+      requestAnimationFrame(() => {
+        estrela.style.stroke = "#FFFFFF";
+        estrela.style.strokeDashoffset = "0";
+      });
+
+      setTimeout(() => {
+        estrela.style.transition = "none";
+        estrela.style.stroke = "#FFFFFF";
+        estrela.style.fill = "none";
+        estrela.style.strokeDasharray = "";
+        estrela.style.strokeDashoffset = "";
+
+        resolve();
+      }, duracao);
+    });
+  }
+
+  // =====================================================
+  // REDESENHAR CENÁRIO EM BRANCO
   // =====================================================
 
   async function redesenharTudoEmBranco() {
-    const paths = [...document.querySelectorAll("#art path")].filter(
-      (path) => !path.closest("#espada"),
-    );
+    const paths = [...document.querySelectorAll("#art path")].filter((path) => {
+      if (path.closest("#espada")) return false;
+      if (path.closest("#estrelas-constelacoes")) return false;
+      if (path.closest("#estrelas-brancas")) return false;
+
+      return true;
+    });
 
     await Promise.all(paths.map((path) => redesenharPathEmBranco(path, 1800)));
+
+    const estrelasBrancas = [
+      ...document.querySelectorAll("#estrelas-brancas path"),
+    ];
+
+    await Promise.all(
+      estrelasBrancas.map((estrela) => redesenharEstrelaBranca(estrela, 1200)),
+    );
   }
+
   // =====================================================
-  // PREPARAR ESTRELAS PARA A NOITE
+  // LINHAS DAS CONSTELAÇÕES
+  // =====================================================
+
+  async function desenharLinhasConstelacoes() {
+    const linhas = obterLinhasConstelacoes();
+
+    for (const linha of linhas) {
+      const comprimento = linha.getTotalLength();
+
+      linha.style.transition = "none";
+      linha.style.animation = "none";
+      linha.style.stroke = "#DBAF50";
+      linha.style.fill = "none";
+      linha.style.opacity = "1";
+      linha.style.strokeDasharray = comprimento;
+      linha.style.strokeDashoffset = comprimento;
+
+      linha.getBoundingClientRect();
+
+      requestAnimationFrame(() => {
+        linha.style.transition = "stroke-dashoffset 1000ms ease";
+
+        linha.style.strokeDashoffset = "0";
+      });
+
+      await new Promise((resolve) => {
+        setTimeout(resolve, 1000);
+      });
+
+      linha.style.transition = "none";
+      linha.style.strokeDasharray = "none";
+      linha.style.strokeDashoffset = "0";
+    }
+  }
+
+  // =====================================================
+  // ATIVAR CONSTELAÇÕES
+  // =====================================================
+
+  async function ativarConstelacoes() {
+    const estrelas = obterEstrelasConstelacoes();
+
+    estrelas.forEach((estrela) => {
+      estrela.style.transition = `
+        fill 1200ms ease,
+        stroke 1200ms ease
+      `;
+
+      estrela.style.stroke = "#DBAF50";
+      estrela.style.fill = "#DBAF50";
+      estrela.style.filter = "none";
+    });
+
+    await new Promise((resolve) => {
+      setTimeout(resolve, 1200);
+    });
+
+    estrelas.forEach((estrela, index) => {
+      estrela.style.transition = "none";
+      estrela.style.animation =
+        "estrelaConstelacaoBrilho 3.5s ease-in-out infinite";
+
+      estrela.style.animationDelay = `${index * 0.35}s`;
+
+      estrela.style.animationFillMode = "both";
+    });
+
+    await desenharLinhasConstelacoes();
+  }
+
+  // =====================================================
+  // PREPARAR MODO NOTURNO
   // =====================================================
 
   function prepararModoNoturno() {
-    // douradas continuam douradas
-    document.querySelectorAll("#estrela-dourada path").forEach((e) => {
-      e.style.stroke = "#DBAF50";
-      e.style.fill = "none";
+    document.querySelectorAll("#estrelas-brancas path").forEach((estrela) => {
+      estrela.style.stroke = "#FFFFFF";
+      estrela.style.fill = "none";
     });
 
-    // pretas continuam pretas.
-    // Elas só ficarão brancas durante o redesenho.
-    document.querySelectorAll("#estrela-preta path").forEach((e) => {
-      e.style.stroke = "#010101";
-      e.style.fill = "none";
+    obterEstrelasConstelacoes().forEach((estrela) => {
+      estrela.style.stroke = "#FFFFFF";
+      estrela.style.fill = "none";
+      estrela.style.opacity = "1";
+    });
+
+    obterLinhasConstelacoes().forEach((linha) => {
+      linha.style.stroke = "#DBAF50";
+      linha.style.fill = "none";
+      linha.style.opacity = "0";
+      linha.style.transition = "none";
+      linha.style.animation = "none";
+      linha.style.strokeDasharray = "";
+      linha.style.strokeDashoffset = "";
     });
   }
 
   // =====================================================
   // ANOITECER
-  //
-  // O FUNDO SURGE POR TRÁS DO DESENHO
   // =====================================================
+
   function iniciarAnoitecer() {
     return new Promise((resolve) => {
       const fundo = document.getElementById("night-background");
       const background = document.getElementById("background");
 
-      // começa já com um pequeno halo
+      if (!fundo || !background) {
+        resolve();
+        return;
+      }
+
       fundo.style.opacity = "0";
       fundo.style.clipPath = "circle(10% at 50% 50%)";
 
       fundo.getBoundingClientRect();
 
       fundo.style.transition = `
-      opacity 180ms linear,
-      clip-path 700ms cubic-bezier(.05,.85,.25,1)
-    `;
+        opacity 180ms linear,
+        clip-path 700ms cubic-bezier(.05,.85,.25,1)
+      `;
 
       requestAnimationFrame(() => {
         fundo.style.opacity = "1";
@@ -406,8 +528,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 700);
     });
   }
+
   // =====================================================
-  // BRILHO SUAVE DA ESPADA
+  // BRILHO DA ESPADA
   // =====================================================
 
   function criarBrilhoEspada() {
@@ -424,24 +547,38 @@ document.addEventListener("DOMContentLoaded", () => {
     espada.style.filter = `
       drop-shadow(0 0 18px rgba(255, 215, 100, 0.45))
       drop-shadow(0 0 30px rgba(255, 215, 100, 0.25))
-      `;
+    `;
+  }
+
+  function aumentarBrilhoBaseEspada() {
+    const espada = document.getElementById("espada");
+
+    if (!espada) return;
+
+    espada.style.transition = "filter 3000ms ease";
+
+    espada.style.filter = `
+      drop-shadow(0 0 12px rgba(255,215,100,0.45))
+      drop-shadow(0 0 25px rgba(255,215,100,0.32))
+      drop-shadow(0 0 45px rgba(255,215,100,0.20))
+      drop-shadow(0 8px 35px rgba(255,215,100,0.18))
+    `;
   }
 
   // =====================================================
-  // ATIVAR EFEITOS DA NOITE
+  // EFEITOS DA NOITE
   // =====================================================
 
   function ativarEfeitosDaNoite() {
     const art = document.getElementById("art");
 
-    if (!art) return;
-
-    // Ativa todos os efeitos definidos no CSS
-    art.classList.add("night-mode");
+    if (art) {
+      art.classList.add("night-mode");
+    }
   }
 
   // =====================================================
-  // PREENCHER LUA
+  // LUA
   // =====================================================
 
   function preencherLua() {
@@ -465,7 +602,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =====================================================
-  // PREENCHER JANELAS
+  // JANELAS
   // =====================================================
 
   function preencherJanelas() {
@@ -491,7 +628,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =====================================================
-  // PREENCHER ESTRELAS DOURADAS
+  // ESTRELAS DOURADAS
   // =====================================================
 
   function preencherEstrelasDouradas() {
@@ -509,25 +646,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =====================================================
-  // BRILHO MAIS FORTE NA BASE DA ESPADA
-  // =====================================================
-
-  function aumentarBrilhoBaseEspada() {
-    const espada = document.getElementById("espada");
-
-    if (!espada) return;
-
-    espada.style.transition = "filter 3000ms ease";
-
-    espada.style.filter = `
-      drop-shadow(0 0 12px rgba(255,215,100,0.45))
-      drop-shadow(0 0 25px rgba(255,215,100,0.32))
-      drop-shadow(0 0 45px rgba(255,215,100,0.20))
-      drop-shadow(0 8px 35px rgba(255,215,100,0.18))
-    `;
-  }
-
-  //CARTAAAAAAAA
+  // CARTA
   // =====================================================
 
   let notificacaoEnviada = false;
@@ -538,10 +657,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const assinatura = document.getElementById("letter-signature");
 
     if (!overlay || !textoCarta || !assinatura) return;
-
-    // =====================================================
-    // ENVIAR NOTIFICAÇÃO APENAS UMA VEZ
-    // =====================================================
 
     if (!notificacaoEnviada) {
       notificacaoEnviada = true;
@@ -558,28 +673,29 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch((error) => {
           console.error("❌ Erro ao enviar notificação:", error);
 
-          // Permite tentar novamente se o envio realmente falhar
           notificacaoEnviada = false;
         });
     }
 
-    // =====================================================
-    // ABRIR CARTA
-    // =====================================================
-
     overlay.classList.add("open");
-
     textoCarta.textContent = "";
-
     assinatura.classList.remove("show");
 
-    const carta = `Ana, acho que tudo se resume a isso:
+    const carta = `Ana,
 
-"Passei séculos perambulando o mundo de impérios a reinos e desertos, nunca me estabeleci, jamais parei... nem por um momento.
+"Até que todas as estrelas se apaguem. Até que o tempo pare. Eu sou seu."
 
-Estava sempre olhando para o horizonte, sempre imaginando o que esperava do outro lado do oceano seguinte, sobre a montanha seguinte.
+Tudo continua sendo sobre -você-. Você ainda tem -tudo- de mim.
 
-Mas acho... acho que o tempo todo, durante todos aqueles séculos, só estava procurando por você."`;
+Meu desejo ainda é: "Ela, ela e ela".
+
+Como é fácil pra você? Estou enlouquecendo de tanta saudades de você.
+
+Eu amo você.
+
+É o que sinto, é o que dizem no meu ouvido.
+
+Sinto sua falta.`;
 
     let letra = 0;
     let textoAtual = "";
@@ -588,15 +704,15 @@ Mas acho... acho que o tempo todo, durante todos aqueles séculos, só estava pr
       if (letra < carta.length) {
         textoAtual += carta[letra];
         textoCarta.textContent = textoAtual;
-
         letra++;
 
         setTimeout(escreverCarta, 35);
-      } else {
-        setTimeout(() => {
-          assinatura.classList.add("show");
-        }, 600);
+        return;
       }
+
+      setTimeout(() => {
+        assinatura.classList.add("show");
+      }, 600);
     }
 
     escreverCarta();
@@ -605,12 +721,15 @@ Mas acho... acho que o tempo todo, durante todos aqueles séculos, só estava pr
   function fecharCarta() {
     const overlay = document.getElementById("letter-overlay");
 
-    if (!overlay) return;
-
-    overlay.classList.remove("open");
+    if (overlay) {
+      overlay.classList.remove("open");
+    }
   }
+
   const botaoCarta = document.getElementById("open-letter");
+
   const botaoFecharCarta = document.getElementById("close-letter");
+
   const overlayCarta = document.getElementById("letter-overlay");
 
   if (botaoCarta) {
@@ -646,31 +765,13 @@ Mas acho... acho que o tempo todo, durante todos aqueles séculos, só estava pr
   }
 
   // =====================================================
-  // INÍCIO
+  // INÍCIO DA ANIMAÇÃO
   // =====================================================
 
   async function iniciar() {
-    // =================================================
-    // PONTINHOS
-    // =================================================
-
     await desenharGrupoJunto("pontinhos", 400);
 
-    // =================================================
-    // ESTRELAS DOURADAS
-    // =================================================
-
-    await desenharGrupoJunto("estrela-dourada", 700);
-
-    // =================================================
-    // ESTRELAS PRETAS
-    // =================================================
-
-    await desenharGrupoJunto("estrela-preta", 500);
-
-    // =================================================
-    // LUA
-    // =================================================
+    await desenharEstrelasDoDia();
 
     const lua = document.querySelector("#lua path");
 
@@ -678,19 +779,11 @@ Mas acho... acho que o tempo todo, durante todos aqueles séculos, só estava pr
       await desenharPath(lua, 1000);
     }
 
-    // =================================================
-    // CHÃO PRINCIPAL
-    // =================================================
-
     const chaoPrincipal = document.getElementById("chao-principal");
 
     if (chaoPrincipal) {
       await desenharPath(chaoPrincipal, 2000);
     }
-
-    // =================================================
-    // PEDRAS
-    // =================================================
 
     const pedras = ["pedra1", "pedra2", "pedra3", "pedra4"];
 
@@ -702,33 +795,17 @@ Mas acho... acho que o tempo todo, durante todos aqueles séculos, só estava pr
       }
     }
 
-    // =================================================
-    // MONTANHA PRINCIPAL
-    // =================================================
-
     const montanhaPrincipal = document.getElementById("montanha-principal");
 
     if (montanhaPrincipal) {
       await desenharPath(montanhaPrincipal, 2500);
     }
 
-    // =================================================
-    // MONTANHA DE FUNDO
-    // =================================================
-
     const montanhaFundo = document.getElementById("montanha-fundo");
 
-    if (!montanhaFundo) {
-      console.error("❌ Não encontrei #montanha-fundo");
-    } else {
-      console.log("🏔️ Desenhando montanha de fundo...");
-
+    if (montanhaFundo) {
       await desenharPath(montanhaFundo, 2500);
     }
-
-    // =================================================
-    // DETALHES DAS MONTANHAS
-    // =================================================
 
     const detalhes = [
       "montanha-detalhe4",
@@ -747,33 +824,17 @@ Mas acho... acho que o tempo todo, durante todos aqueles séculos, só estava pr
       }
     }
 
-    // =================================================
-    // CASTELO
-    // =================================================
-
     const animacaoCastelo = desenharCastelo();
-
-    // =================================================
-    // ESPERA PARA O BURACO DA ESPADA
-    // =================================================
 
     await new Promise((resolve) => {
       setTimeout(resolve, 2500);
     });
-
-    // =================================================
-    // BURACO DA ESPADA
-    // =================================================
 
     const buraco = document.getElementById("chao-buraco-espada");
 
     if (buraco) {
       await desenharPath(buraco, 3000);
     }
-
-    // =================================================
-    // FLORES
-    // =================================================
 
     const florEsquerda = document.getElementById("flor-esquerda");
 
@@ -803,66 +864,44 @@ Mas acho... acho que o tempo todo, durante todos aqueles séculos, só estava pr
       await Promise.all(animacoes);
     }
 
-    // =================================================
+    // ===================================================
     // ANOITECER
-    // =================================================
+    // ===================================================
 
-    console.log("🌌 Iniciando anoitecer...");
+    await iniciarAnoitecer();
 
-    // 🌌 noite chegaF
-    await iniciarAnoitecer(100);
-
-    // =================================================
-    // REDESENHAR TODO O CENÁRIO EM BRANCO
-    // =================================================
+    prepararModoNoturno();
 
     await redesenharTudoEmBranco();
 
-    // =================================================
+    // ===================================================
     // ESPADA
-    // =================================================
+    // ===================================================
 
     await desenharEspadaNoturna();
 
-    // =================================================
-    // ESPERAR O CASTELO
-    // =================================================
-
     await animacaoCastelo;
 
-    // =================================================
-    // ATIVAR EFEITOS DA NOITE
-    // =================================================
+    // ===================================================
+    // EFEITOS DA NOITE
+    // ===================================================
 
     ativarEfeitosDaNoite();
-
-    // =================================================
-    // LUA
-    // =================================================
-
     preencherLua();
-
-    // =================================================
-    // JANELAS
-    // =================================================
-
     preencherJanelas();
 
-    // =================================================
-    // ESTRELAS DOURADAS
-    // =================================================
-
-    preencherEstrelasDouradas();
-
-    // =================================================
-    // BRILHO DA ESPADA
-    // =================================================
-
     criarBrilhoEspada();
-
     aumentarBrilhoBaseEspada();
 
-    console.log("🌙 Noite concluída.");
+    // ===================================================
+    // CONSTELAÇÕES
+    // ===================================================
+
+    await ativarConstelacoes();
+
+    // ===================================================
+    // TEXTO
+    // ===================================================
 
     const contentPage = document.querySelector(".content-page");
 
@@ -880,25 +919,16 @@ Mas acho... acho que o tempo todo, durante todos aqueles séculos, só estava pr
   // =====================================================
 
   const introScreen = document.getElementById("intro-screen");
+
   const startExperience = document.getElementById("start-experience");
 
   if (startExperience) {
     startExperience.addEventListener("click", () => {
-      // =================================================
-      // COMEÇA A MÚSICA
-      // =================================================
-
       iniciarMusica();
 
-      // =================================================
-      // ESCONDE A TELA INICIAL
-      // =================================================
-
-      introScreen.classList.add("hidden");
-
-      // =================================================
-      // COMEÇA A ANIMAÇÃO
-      // =================================================
+      if (introScreen) {
+        introScreen.classList.add("hidden");
+      }
 
       iniciar();
     });

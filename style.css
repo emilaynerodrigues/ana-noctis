@@ -16,7 +16,7 @@ body {
 }
 
 body {
-  background: #ffffff;
+  background: #fff;
   overflow-x: hidden;
 }
 
@@ -25,157 +25,51 @@ body {
   max-width: 390px;
   min-height: 100vh;
   margin: 0 auto;
-
-  color: #ffffff;
+  color: #fff;
 }
 
 .page {
   position: relative;
   width: 100%;
   overflow: hidden;
-
   background: #06143f;
 }
 
 .scene {
   position: relative;
   width: 100%;
-
   aspect-ratio: 390 / 844;
-
   overflow: hidden;
-
-  background-color: #f7eedb;
+  background: #f7eedb;
 }
 
 #art {
   position: relative;
-
+  z-index: 1;
+  display: block;
   width: 100%;
   height: 100%;
-
-  display: block;
-
-  z-index: 1;
 }
 
-/* =========================================
-   NÃO PREENCHER OS DESENHOS
-========================================= */
+/* =========================
+   DESENHO INICIAL
+========================= */
 
-#estrela-dourada path,
-#estrela-preta path,
-#pontinhos path,
 #lua path,
 #montanha path,
+#castelo path,
 #chao path,
 #flores path {
   fill: none;
+  stroke: #010101;
+  opacity: 0;
 }
 
 #castelo #estrutura-principal {
   fill: none;
-}
-
-#castelo [id^="janela"] {
-  fill: black;
-  stroke: black;
-  opacity: 0;
-}
-
-#lua path,
-#montanha path,
-#castelo path,
-#chao path,
-#flores path {
-  stroke: #010101;
-}
-
-/* =========================================
-   ESTRELAS E PONTINHOS
-========================================= */
-
-#estrela-dourada path,
-#estrela-preta path,
-#pontinhos path {
-  opacity: 0;
-}
-
-/* =========================================
-   DESENHOS QUE SERÃO TRAÇADOS
-========================================= */
-
-#lua path,
-#montanha path,
-#castelo path,
-#chao path,
-#flores path {
-  opacity: 0;
-}
-
-/* =========================================
-   ESTRELA DOURADA
-========================================= */
-
-/* =========================================
-   ESTRELA PRETA
-========================================= */
-
-.scene {
-  background-color: #f7eedb;
-}
-
-/* =========================================
-   ESTRELAS
-========================================= */
-
-#estrela-dourada path,
-#estrela-preta path,
-#pontinhos path {
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
-/* =========================================
-   FUNDO DO SVG
-========================================= */
-
-#background {
-  fill: #f7eedb;
-  transition: fill 4000ms ease;
-}
-
-/* =====================================================
-   CASTELO
-===================================================== */
-
-/*
-   O castelo inteiro começa invisível.
-*/
-#castelo {
-  opacity: 1;
-}
-
-/* =====================================================
-   ESTRUTURA DO CASTELO
-===================================================== */
-
-#estrutura-principal {
-  fill: none;
   stroke: #010101;
   opacity: 0;
 }
-
-/* =====================================================
-   JANELAS
-===================================================== */
-
-/*
-   As janelas não serão desenhadas pelo
-   stroke-dashoffset.
-
-   Elas vão aparecer uma por uma.
-*/
 
 #castelo-janelas path {
   opacity: 0;
@@ -183,7 +77,57 @@ body {
   stroke: none;
 }
 
-/*ESPADA*/
+#estrelas-brancas path,
+#estrelas-constelacoes path,
+#pontinhos path {
+  opacity: 0;
+  fill: none;
+  stroke: #010101;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+#estrelas-constelacoes .constelacao-linha path {
+  opacity: 0;
+  fill: none;
+}
+
+/* =========================
+   FUNDO
+========================= */
+
+#background {
+  fill: #f7eedb;
+  transition: fill 4000ms ease;
+}
+
+#night-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url("img/background-night.png") center / cover no-repeat;
+  opacity: 0;
+  clip-path: circle(0% at 50% 50%);
+  pointer-events: none;
+}
+
+/* =========================
+   CASTELO
+========================= */
+
+#castelo {
+  opacity: 1;
+}
+
+#estrutura-principal {
+  fill: none;
+  stroke: #010101;
+  opacity: 0;
+}
+
+/* =========================
+   ESPADA
+========================= */
 
 #espada path {
   opacity: 0;
@@ -197,166 +141,114 @@ body {
   fill: none;
 }
 
-#parte-preta {
-  fill: none;
-}
-
-#pedra-vermelha {
-  fill: none;
-}
-
+#parte-preta,
+#pedra-vermelha,
 #parte-dourada {
   fill: none;
 }
 
-/* =====================================================
-   FUNDO NOTURNO
-===================================================== */
-
-#night-background {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 0;
-
-  background: url("img/background-night.png") center / cover no-repeat;
-
-  opacity: 0;
-
-  clip-path: circle(0% at 50% 50%);
-
-  pointer-events: none;
-}
-
-#art {
-  position: relative;
-  z-index: 1;
-}
-
-/* =====================================================
-   EFEITOS DA NOITE
-===================================================== */
-
-/*
-   Nada disso acontece durante o desenho inicial.
-   Os efeitos só são ativados quando o JS adiciona
-   a classe .night-mode ao SVG.
-*/
+/* =========================
+   NOITE
+========================= */
 
 #art.night-mode #lua path {
   fill: #f7eedb;
-  stroke: #ffffff;
+  stroke: #fff;
   filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.35))
     drop-shadow(0 0 10px rgba(255, 255, 255, 0.18));
-
   transition:
     fill 1800ms ease,
     filter 1800ms ease;
 }
 
-/* =====================================================
-   JANELAS DO CASTELO
-===================================================== */
-
 #art.night-mode #castelo-janelas path {
   fill: #dbaf50;
   stroke: #dbaf50;
-
   filter: drop-shadow(0 0 3px rgba(219, 175, 80, 0.45))
     drop-shadow(0 0 8px rgba(219, 175, 80, 0.25));
-
   transition:
     fill 1200ms ease,
     stroke 1200ms ease,
     filter 1200ms ease;
 }
 
-/* =====================================================
-   ESTRELAS DOURADAS
-===================================================== */
+/* =========================
+   ESTRELAS BRANCAS
+========================= */
 
-#art.night-mode #estrela-dourada path {
-  fill: #dbaf50;
-  stroke: #dbaf50;
-
-  filter: drop-shadow(0 0 3px rgba(219, 175, 80, 0.55))
-    drop-shadow(0 0 8px rgba(219, 175, 80, 0.3));
-
-  animation: estrelaDouradaBrilho 3.5s ease-in-out infinite;
+#estrelas-brancas path {
+  stroke-width: 0.5;
 }
 
-/* =====================================================
-   ESTRELAS BRANCAS
-===================================================== */
-
-#art.night-mode #estrela-preta path {
-  fill: #ffffff;
-  stroke: #ffffff;
-
+#art.night-mode #estrelas-brancas path {
+  fill: #fff;
+  stroke: #fff;
   animation: estrelaPiscar 4s ease-in-out infinite;
 }
 
-/*
-   Cada estrela começa em um momento diferente.
-   Isso evita que todas pisquem juntas.
-*/
-
-#art.night-mode #estrela-preta1 {
+#art.night-mode #estrela-branca1 {
   animation-delay: -0.8s;
 }
 
-#art.night-mode #estrela-preta2 {
+#art.night-mode #estrela-branca2 {
   animation-delay: -2.1s;
 }
 
-#art.night-mode #estrela-preta3 {
+#art.night-mode #estrela-branca3 {
   animation-delay: -1.4s;
 }
 
-#art.night-mode #estrela-preta4 {
+#art.night-mode #estrela-branca4 {
   animation-delay: -3s;
 }
 
-#art.night-mode #estrela-preta5 {
+#art.night-mode #estrela-branca5 {
   animation-delay: -1.9s;
 }
 
-#art.night-mode #estrela-preta6 {
+#art.night-mode #estrela-branca6 {
   animation-delay: -2.7s;
 }
 
-/* =====================================================
-   ESTRELAS DOURADAS - DEFASAGEM
-===================================================== */
-
-#art.night-mode #estrela-dourada1 {
+#art.night-mode #estrela-branca7 {
   animation-delay: -1.2s;
 }
 
-#art.night-mode #estrela-dourada2 {
+#art.night-mode #estrela-branca8 {
   animation-delay: -2.5s;
 }
 
-#art.night-mode #estrela-dourada3 {
+#art.night-mode #estrela-branca9 {
   animation-delay: -0.4s;
 }
 
-#art.night-mode #estrela-dourada4 {
+#art.night-mode #estrela-branca10 {
   animation-delay: -1.8s;
 }
 
-#art.night-mode #estrela-dourada5 {
+#art.night-mode #estrela-branca11 {
   animation-delay: -3.1s;
 }
 
-#art.night-mode #estrela-dourada6 {
+#art.night-mode #estrela-branca12 {
   animation-delay: -2.2s;
 }
 
-/* =====================================================
-   ANIMAÇÃO DAS ESTRELAS
-===================================================== */
+#art.night-mode #estrela-branca13 {
+  animation-delay: -1.9s;
+}
+
+#art.night-mode #estrela-branca14 {
+  animation-delay: -2.7s;
+}
+
+#art.night-mode #estrela-branca15 {
+  animation-delay: -1.2s;
+}
+
+#art.night-mode #estrela-branca16 {
+  animation-delay: -2.5s;
+}
 
 @keyframes estrelaPiscar {
   0%,
@@ -371,31 +263,41 @@ body {
   }
 }
 
-@keyframes estrelaDouradaBrilho {
+/* =========================
+   CONSTELAÇÕES
+========================= */
+
+#estrelas-constelacoes path:not(.constelacao-linha) {
+  stroke-width: 0.35;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes estrelaConstelacaoBrilho {
   0%,
   100% {
+    opacity: 0.78;
     transform: scale(0.88);
-
-    filter: drop-shadow(0 0 2px rgba(219, 175, 80, 0.35))
-      drop-shadow(0 0 6px rgba(219, 175, 80, 0.18));
+    filter: drop-shadow(0 0 2px rgba(219, 175, 80, 0.25))
+      drop-shadow(0 0 5px rgba(219, 175, 80, 0.12));
   }
 
   50% {
-    transform: scale(1.15);
-
-    filter: drop-shadow(0 0 5px rgba(219, 175, 80, 0.75))
-      drop-shadow(0 0 14px rgba(219, 175, 80, 0.42));
+    opacity: 1;
+    transform: scale(1.18);
+    filter: drop-shadow(0 0 4px rgba(219, 175, 80, 0.75))
+      drop-shadow(0 0 10px rgba(219, 175, 80, 0.45))
+      drop-shadow(0 0 18px rgba(219, 175, 80, 0.22));
   }
 }
 
-/* =====================================================
+/* =========================
    PONTINHOS
-===================================================== */
+========================= */
 
 #art.night-mode #pontinhos path {
   fill: #dbaf50;
   stroke: #dbaf50;
-
   animation: pontinhoBrilho 3s ease-in-out infinite;
 }
 
@@ -412,26 +314,19 @@ body {
   }
 }
 
-/* =====================================================
+/* =========================
    FLORES
-===================================================== */
-
-/*
-   O movimento é propositalmente muito pequeno.
-   A ideia é parecer vento, não uma animação mecânica.
-*/
+========================= */
 
 #art.night-mode #flor-esquerda {
   transform-box: fill-box;
   transform-origin: 50% 100%;
-
   animation: ventoEsquerda 5.5s ease-in-out infinite;
 }
 
 #art.night-mode #flor-direita {
   transform-box: fill-box;
   transform-origin: 50% 100%;
-
   animation: ventoDireita 6.2s ease-in-out infinite;
 }
 
@@ -473,28 +368,22 @@ body {
   }
 }
 
-/* =====================================================
-   ESPADA
-===================================================== */
+/* =========================
+   ESPADA — NOITE
+========================= */
 
 #art.night-mode #espada {
   filter: drop-shadow(0 0 10px rgba(255, 215, 100, 0.35))
     drop-shadow(0 0 22px rgba(255, 215, 100, 0.22))
     drop-shadow(0 0 40px rgba(255, 215, 100, 0.12));
-
   animation: pulsarEspada 3s ease-in-out infinite;
 }
 
 #art.night-mode #lamina {
   filter: drop-shadow(0 0 8px rgba(255, 215, 100, 0.3))
     drop-shadow(0 0 18px rgba(255, 215, 100, 0.16));
-
   animation: pulsarLamina 3s ease-in-out infinite;
 }
-
-/* =========================
-   PULSO DO BRILHO DA ESPADA
-   ========================= */
 
 @keyframes pulsarEspada {
   0%,
@@ -511,10 +400,6 @@ body {
   }
 }
 
-/* =========================
-   PULSO DA LÂMINA
-   ========================= */
-
 @keyframes pulsarLamina {
   0%,
   100% {
@@ -529,15 +414,28 @@ body {
 }
 
 /* =========================
-   INTRO
-   ========================= */
+   CONTEÚDO
+========================= */
 
 .content-page {
   position: absolute;
+  top: 66%;
   left: 0;
   right: 0;
-  top: 66%;
   z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 1800ms ease,
+    visibility 0s linear 1800ms;
+}
+
+.content-page.visible {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 1800ms ease,
+    visibility 0s linear 0s;
 }
 
 .intro {
@@ -553,52 +451,34 @@ body {
 }
 
 .open-text {
-  margin: 20px 5px 5px 5px;
-  font-size: 10px;
+  margin: 20px 5px 5px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.open-text:hover {
+  color: #dbaf50;
 }
 
 .arrow {
   animation: seta 1.5s ease-in-out infinite;
 }
-/* =========================
-   CONTEÚDO
-   ========================= */
 
 .content {
   min-height: 90px;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   padding: 10px;
-
   border-bottom: 1px solid rgba(255, 255, 255, 0.7);
 }
 
-.content-page {
-  opacity: 0;
-  visibility: hidden;
-  transition:
-    opacity 1800ms ease,
-    visibility 0s linear 1800ms;
-}
-
-.content-page.visible {
-  opacity: 1;
-  visibility: visible;
-  transition:
-    opacity 1800ms ease,
-    visibility 0s linear 0s;
-}
-/* =========================
-   RODAPÉ
-   ========================= */
-
 footer {
   text-align: center;
-
   padding: 10px 2px;
 }
 
@@ -607,9 +487,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-
   gap: 10px;
-
   color: #dbaf50;
 }
 
@@ -618,30 +496,24 @@ footer {
 .star-line::after,
 .footer-line::after {
   content: "";
-
   width: 50px;
   height: 1px;
-
   background: #dbaf50;
 }
 
 .star-line span,
 .footer-line span {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   font-size: 13px;
 }
 
 footer p {
-  text-align: center;
   margin: 5px 1px;
+  text-align: center;
   font-size: 12px;
 }
-
-/* =========================
-   ANIMAÇÃO DA SETA
-   ========================= */
 
 @keyframes seta {
   0%,
@@ -654,121 +526,83 @@ footer p {
   }
 }
 
-/* =====================================================
+/* =========================
    CARTA
-===================================================== */
+========================= */
 
 .letter-overlay {
   position: fixed;
   inset: 0;
-
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: rgba(10, 18, 35, 0.55);
-
   backdrop-filter: blur(4px);
-
   opacity: 0;
   visibility: hidden;
-
   transition:
     opacity 800ms ease,
     visibility 0s linear 800ms;
-
-  z-index: 100;
 }
 
 .letter-overlay.open {
   opacity: 1;
   visibility: visible;
-
   transition:
     opacity 800ms ease,
     visibility 0s linear 0s;
 }
 
-/* =====================================================
-   PAPEL
-===================================================== */
-
-/* =====================================================
-   PAPEL ANTIGO
-===================================================== */
-
 .letter {
   position: relative;
-
   width: min(650px, 82vw);
   max-height: 75vh;
-
   padding: 45px;
-
+  overflow-y: auto;
   background: radial-gradient(
     ellipse at center,
     rgba(255, 249, 230, 0.95) 0%,
     rgba(247, 238, 219, 0.98) 65%,
     rgba(224, 207, 171, 0.95) 100%
   );
-
   border: 1px solid rgba(155, 119, 57, 0.55);
-
   box-shadow:
     0 0 25px rgba(219, 175, 80, 0.12),
     0 20px 60px rgba(0, 0, 0, 0.35),
     inset 0 0 35px rgba(120, 85, 35, 0.1);
-
   transform: translateY(30px) scale(0.96);
-
-  transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
-
-  overflow-y: auto;
-
-  /* envelhecimento das bordas */
   filter: sepia(8%);
-}
-
-.letter::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  pointer-events: none;
-
-  background: radial-gradient(
-    ellipse at center,
-    transparent 55%,
-    rgba(120, 85, 35, 0.08) 80%,
-    rgba(90, 60, 25, 0.18) 100%
-  );
-
-  mix-blend-mode: multiply;
-}
-
-.letter-decoration {
-  position: absolute;
-
-  top: 25px;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  color: #dbaf50;
-
-  font-size: 18px;
-
-  opacity: 0.75;
+  transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .letter-overlay.open .letter {
   transform: translateY(0) scale(1);
 }
 
-/* =====================================================
-   TEXTO
-===================================================== */
+.letter::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 55%,
+    rgba(120, 85, 35, 0.08) 80%,
+    rgba(90, 60, 25, 0.18) 100%
+  );
+  mix-blend-mode: multiply;
+}
+
+.letter-decoration {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  color: #dbaf50;
+  font-size: 18px;
+  opacity: 0.75;
+  transform: translateX(-50%);
+}
 
 .letter-content {
   color: #1e2c4f;
@@ -789,26 +623,18 @@ footer p {
 
 .letter-quote {
   padding-left: 20px;
-
   border-left: 1px solid rgba(219, 175, 80, 0.65);
-
   font-style: italic;
-
   opacity: 0.92;
 }
 
 #letter-signature {
   margin-top: 35px;
-
-  text-align: right;
-
-  font-style: italic;
-
   color: #1e2c4f;
-
+  text-align: right;
+  font-style: italic;
   opacity: 0;
   transform: translateY(10px);
-
   transition:
     opacity 1200ms ease,
     transform 1200ms ease;
@@ -819,26 +645,16 @@ footer p {
   transform: translateY(0);
 }
 
-/* =====================================================
-   FECHAR
-===================================================== */
-
 .close-letter {
   position: absolute;
-
   top: 15px;
   right: 18px;
-
   border: none;
   background: transparent;
-
   color: #1e2c4f;
-
   font-size: 26px;
   font-weight: 300;
-
   cursor: pointer;
-
   transition:
     color 300ms ease,
     transform 300ms ease;
@@ -849,43 +665,19 @@ footer p {
   transform: rotate(90deg);
 }
 
-/* =====================================================
-   BOTÃO CLIQUE PARA ABRIR
-===================================================== */
-
-.open-text {
-  border: none;
-  background: none;
-
-  padding: 0;
-
-  color: inherit;
-
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.open-text:hover {
-  color: #dbaf50;
-}
-
-/* =====================================================
+/* =========================
    TELA INICIAL
-   ===================================================== */
+========================= */
 
 #intro-screen {
   position: fixed;
   inset: 0;
   z-index: 9999;
-
-  background: #f7eedb;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   overflow: hidden;
-
+  background: #f7eedb;
   transition:
     opacity 1800ms ease,
     visibility 1800ms ease;
@@ -907,23 +699,19 @@ footer p {
   position: absolute;
   left: 50%;
   bottom: 44%;
-  transform: translateX(-50%);
-
+  z-index: 1;
   width: min(97vw, 540px);
   height: auto;
-
-  z-index: 1;
   opacity: 0.9;
   pointer-events: none;
+  transform: translateX(-50%);
 }
 
 .intro-text {
   margin: 0 0 35px;
-
+  color: #000;
   font-size: 16px;
   line-height: 1.8;
-
-  color: #000;
 }
 
 .intro-text span {
@@ -937,16 +725,11 @@ footer p {
 
 #start-experience {
   padding: 12px 35px;
-
   border: 1.2px solid #dbaf50;
   background: #f7eedb;
-
-  font-size: 16px;
-
   color: #dbaf50;
-
+  font-size: 16px;
   cursor: pointer;
-
   transition:
     background 300ms ease,
     color 300ms ease;
