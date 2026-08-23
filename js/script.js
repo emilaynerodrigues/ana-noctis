@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  let cartaDoAcesso = null;
   // =====================================================
   // FRASE
   // =====================================================
@@ -650,6 +651,39 @@ document.addEventListener("DOMContentLoaded", () => {
   // =====================================================
 
   let notificacaoEnviada = false;
+  let indiceCartaAtual = null;
+
+  function escolherCarta() {
+    if (!cartas || cartas.length === 0) {
+      console.error("❌ Nenhuma carta foi encontrada.");
+      return null;
+    }
+
+    const chave = "ana_noctis_cartas_lidas";
+
+    let cartasLidas = JSON.parse(localStorage.getItem(chave)) || [];
+
+    // Se todas as cartas já foram recebidas,
+    // começa um novo ciclo.
+    if (cartasLidas.length >= cartas.length) {
+      cartasLidas = [];
+    }
+
+    // Apenas cartas que ainda não foram recebidas
+    const disponiveis = cartas
+      .map((_, index) => index)
+      .filter((index) => !cartasLidas.includes(index));
+
+    // Sorteia uma carta
+    const indice = disponiveis[Math.floor(Math.random() * disponiveis.length)];
+
+    // Marca como recebida
+    cartasLidas.push(indice);
+
+    localStorage.setItem(chave, JSON.stringify(cartasLidas));
+
+    return cartas[indice];
+  }
 
   function abrirCarta() {
     const overlay = document.getElementById("letter-overlay");
@@ -658,6 +692,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!overlay || !textoCarta || !assinatura) return;
 
+    // Se por algum motivo não houver carta escolhida
+    if (!cartaDoAcesso) {
+      cartaDoAcesso = escolherCarta();
+    }
+
+    if (!cartaDoAcesso) return;
+
+    // ================================================
+    // NOTIFICAÇÃO
+    // ================================================
+
     if (!notificacaoEnviada) {
       notificacaoEnviada = true;
 
@@ -665,10 +710,10 @@ document.addEventListener("DOMContentLoaded", () => {
         .send("service_04hrmhh", "template_gd1y7po", {
           name: "Ana",
           email: "",
-          message: "A Ana acessou o site e abriu a carta.",
+          message: `A Ana acessou o site e abriu a ${cartaDoAcesso.titulo}.`,
         })
         .then(() => {
-          console.log("📨 Notificação enviada!");
+          console.log(`📨 Notificação enviada: ${cartaDoAcesso.titulo}`);
         })
         .catch((error) => {
           console.error("❌ Erro ao enviar notificação:", error);
@@ -677,25 +722,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // ================================================
+    // ABRIR CARTA
+    // ================================================
+
     overlay.classList.add("open");
+
     textoCarta.textContent = "";
     assinatura.classList.remove("show");
 
-    const carta = `Ana,
-
-"Até que todas as estrelas se apaguem. Até que o tempo pare. Eu sou seu."
-
-Tudo continua sendo sobre -você-. Você ainda tem -tudo- de mim.
-
-Meu desejo ainda é: "Ela, ela e ela".
-
-Como é fácil pra você? Estou enlouquecendo de tanta saudades de você.
-
-Eu amo você.
-
-É o que sinto, é o que dizem no meu ouvido.
-
-Sinto sua falta.`;
+    const carta = cartaDoAcesso.texto;
 
     let letra = 0;
     let textoAtual = "";
@@ -703,10 +739,13 @@ Sinto sua falta.`;
     function escreverCarta() {
       if (letra < carta.length) {
         textoAtual += carta[letra];
+
         textoCarta.textContent = textoAtual;
+
         letra++;
 
         setTimeout(escreverCarta, 35);
+
         return;
       }
 
@@ -726,10 +765,12 @@ Sinto sua falta.`;
     }
   }
 
+  // =====================================================
+  // EVENTOS DA CARTA
+  // =====================================================
+
   const botaoCarta = document.getElementById("open-letter");
-
   const botaoFecharCarta = document.getElementById("close-letter");
-
   const overlayCarta = document.getElementById("letter-overlay");
 
   if (botaoCarta) {
@@ -769,6 +810,8 @@ Sinto sua falta.`;
   // =====================================================
 
   async function iniciar() {
+    cartaDoAcesso = escolherCarta();
+
     await desenharGrupoJunto("pontinhos", 400);
 
     await desenharEstrelasDoDia();
