@@ -1,5 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // =====================================================
+  // CARTA DO ACESSO ATUAL
+  // =====================================================
+
   let cartaDoAcesso = null;
+
+  function sortearCarta() {
+    const indice = Math.floor(Math.random() * cartas.length);
+    cartaDoAcesso = cartas[indice];
+
+    console.log("📜 Carta escolhida:", cartaDoAcesso.titulo);
+  }
   // =====================================================
   // FRASE
   // =====================================================
@@ -690,18 +701,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const textoCarta = document.getElementById("letter-text");
     const assinatura = document.getElementById("letter-signature");
 
-    if (!overlay || !textoCarta || !assinatura) return;
+    if (!overlay || !textoCarta || !assinatura || !cartaDoAcesso) return;
 
-    // Se por algum motivo não houver carta escolhida
-    if (!cartaDoAcesso) {
-      cartaDoAcesso = escolherCarta();
-    }
-
-    if (!cartaDoAcesso) return;
-
-    // ================================================
+    // =====================================================
     // NOTIFICAÇÃO
-    // ================================================
+    // =====================================================
 
     if (!notificacaoEnviada) {
       notificacaoEnviada = true;
@@ -711,20 +715,22 @@ document.addEventListener("DOMContentLoaded", () => {
           name: "Ana",
           email: "",
           message: `A Ana acessou o site e abriu a ${cartaDoAcesso.titulo}.`,
+          carta: cartaDoAcesso.titulo,
+          texto_carta: cartaDoAcesso.texto,
         })
         .then(() => {
-          console.log(`📨 Notificação enviada: ${cartaDoAcesso.titulo}`);
+          console.log("📨 Notificação enviada!");
+          console.log("📜 Carta aberta:", cartaDoAcesso.titulo);
         })
         .catch((error) => {
           console.error("❌ Erro ao enviar notificação:", error);
-
           notificacaoEnviada = false;
         });
     }
 
-    // ================================================
+    // =====================================================
     // ABRIR CARTA
-    // ================================================
+    // =====================================================
 
     overlay.classList.add("open");
 
@@ -739,13 +745,10 @@ document.addEventListener("DOMContentLoaded", () => {
     function escreverCarta() {
       if (letra < carta.length) {
         textoAtual += carta[letra];
-
         textoCarta.textContent = textoAtual;
-
         letra++;
 
         setTimeout(escreverCarta, 35);
-
         return;
       }
 
@@ -810,7 +813,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // =====================================================
 
   async function iniciar() {
-    cartaDoAcesso = escolherCarta();
+    // Escolhe UMA carta para este acesso
+    sortearCarta();
 
     await desenharGrupoJunto("pontinhos", 400);
 
