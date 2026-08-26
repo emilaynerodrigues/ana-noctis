@@ -738,7 +738,6 @@ document.addEventListener("DOMContentLoaded", () => {
     assinatura.classList.remove("show");
 
     const carta = cartaDoAcesso.texto;
-
     let letra = 0;
     let textoAtual = "";
 
@@ -747,9 +746,29 @@ document.addEventListener("DOMContentLoaded", () => {
         textoAtual += carta[letra];
         textoCarta.textContent = textoAtual;
         letra++;
-
         setTimeout(escreverCarta, 35);
         return;
+      }
+
+      // Quando terminar de escrever, transforma o 🌻 em link
+      if (cartaDoAcesso.linkGirassol) {
+        const texto = textoCarta.textContent;
+        const girassol = "🌻";
+        const posicao = texto.lastIndexOf(girassol);
+
+        if (posicao !== -1) {
+          const antes = texto.slice(0, posicao);
+          const depois = texto.slice(posicao + girassol.length);
+
+          textoCarta.innerHTML =
+            antes +
+            `<a href="${cartaDoAcesso.linkGirassol}" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="link-girassol"
+            aria-label="Abrir o girassol">${girassol}</a>` +
+            depois;
+        }
       }
 
       setTimeout(() => {

@@ -739,3 +739,17 @@ footer p {
   background: #dbaf50;
   color: #000;
 }
+
+.link-girassol {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.link-girassol:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px rgba(255, 215, 100, 0.7));
+}

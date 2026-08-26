@@ -1,4 +1,5 @@
 const cartas = [
+  /*
   {
     titulo: "Carta 1 - Sou eu",
     texto: `Ana,
@@ -17,7 +18,9 @@ Eu amo você.
 
 Sinto sua falta.`,
   },
+  */
 
+  /*
   {
     titulo: "Carta 2 - É a Aelin",
     texto: `Ana, Aelin realmente disse isso?
@@ -30,7 +33,9 @@ Sinto sua falta.`,
 
     Saudades.`,
   },
+  */
 
+  /*
   {
     titulo: "Carta 3 - É o Rowan",
     texto: `Ana, o Rowan é um maluco!
@@ -41,7 +46,9 @@ Sinto sua falta.`,
 
     Saudades!`,
   },
+  */
 
+  /*
   {
     titulo: "Carta 4 - Sou eu",
     texto: `Ana, agora sou eu:
@@ -58,6 +65,9 @@ Sinto sua falta.`,
   
      Saudades, minha paixão.`,
   },
+*/
+
+  /*
   {
     titulo: "Carta 5 - É a Aelin",
     texto: `Ana, a Aelin tem seus momentos, não é? Agora consigo entender...
@@ -72,7 +82,9 @@ Sinto sua falta.`,
   
      Sinto sua falta.`,
   },
+*/
 
+  /*
   {
     titulo: "Carta 6 - É a Yrene",
     texto: `Ana, você nunca me falou sobre a Yrene, mas ela falou algo que me chamou atenção:
@@ -85,6 +97,9 @@ Sinto sua falta.`,
   
     Saudades.`,
   },
+  */
+
+  /*
   {
     titulo: "Carta 7 - Elide",
     texto: `Ana, é um tanto quanto:
@@ -99,6 +114,9 @@ Sinto sua falta.`,
   
       Estou com saudades.`,
   },
+  */
+
+  /*
   {
     titulo: "Carta 8 - É a Celaena",
     texto: `Ana, ainda é:
@@ -114,7 +132,9 @@ Sinto sua falta.`,
   
   Sinto sua falta.`,
   },
+  */
 
+  /*
   {
     titulo: "Carta 9 - É a Lysandra",
     texto: `Ana, sempre foi:
@@ -129,7 +149,9 @@ Sinto sua falta.`,
 
   Saudades.`,
   },
+*/
 
+  /*
   {
     titulo: "Carta 10 - É o Dorian",
     texto: `Ana,
@@ -145,6 +167,8 @@ Sinto sua falta.`,
   Saudades.`,
   },
 
+  */
+
   {
     titulo: "Carta 11 - É o Chaol",
     texto: `Ana,
@@ -155,15 +179,18 @@ Sinto sua falta.`,
 
   Uma luz em uma época em que eu nem sabia direito que estava no escuro.
 
-  Talvez seja por isso que ainda seja tão difícil...
+  Talvez seja por isso seja tão difícil...
 
   Eu não vou te esquecer e preciso de você perto.
 
-  Você é meu segundo girassol, lembra?
+  Você é meu segundo girassol, lembra? 🌻
 
-  Saudades.`,
+  ~~ clique no girassol ~~ `,
+
+    linkGirassol: "https://emilaynerodrigues.github.io/girassois-para-ana/",
   },
 
+  /*
   {
     titulo: "Carta 12 - É o Lorcan",
     texto: `Ana,
@@ -178,7 +205,9 @@ Sinto sua falta.`,
 
   Saudades.`,
   },
+  */
 
+  /*
   {
     titulo: "Carta 13 - Sou eu",
     texto: `Ana, Vênus é sobre você!
@@ -199,6 +228,10 @@ Sinto sua falta.`,
 
   Sinto sua falta.`,
   },
+
+  */
+
+  /*
   {
     titulo: "Carta X - Estou com dor",
     texto: `Ana, sinto que escrevo cartas a um ser divino.
@@ -215,4 +248,6 @@ Continua sendo você.
 
 Saudades,`,
   },
+  
+*/
 ];
