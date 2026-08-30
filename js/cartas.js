@@ -1,5 +1,4 @@
 const cartas = [
-  /*
   {
     titulo: "Carta 1 - Sou eu",
     texto: `Ana,
@@ -18,9 +17,7 @@ Eu amo você.
 
 Sinto sua falta.`,
   },
-  */
 
-  /*
   {
     titulo: "Carta 2 - É a Aelin",
     texto: `Ana, Aelin realmente disse isso?
@@ -33,22 +30,18 @@ Sinto sua falta.`,
 
     Saudades.`,
   },
-  */
 
-  /*
   {
     titulo: "Carta 3 - É o Rowan",
     texto: `Ana, o Rowan é um maluco!
 
     "Eu a reivindico. Aelin Galathynius. Como minha parceira, minha rainha e minha igual. Se eu tiver que quebrar o mundo para mantê-la a meu lado, eu o farei. Não há vida para mim sem você."
 
-    A paixão tem esse poder de deixar mais intenso. Por isso, minha está do avesso sem você.      
+    A paixão tem esse poder de deixar tudo mais intenso. Por isso, minha vida está do avesso sem você.      
 
     Saudades!`,
   },
-  */
 
-  /*
   {
     titulo: "Carta 4 - Sou eu",
     texto: `Ana, agora sou eu:
@@ -57,17 +50,13 @@ Sinto sua falta.`,
   
       Todos os dias sinto sua falta e espero que tudo seja diferente no fim de cada um deles.
   
-      Que louco, não é?
+      Que mundo louco, não é?
   
-     A verdade é que estou enlouquecendo de tanta saudades.
+     A verdade é que estou enlouquecendo de saudades.
   
-    Seu cheiro, seu beijo, sua voz...
-  
-     Saudades, minha paixão.`,
+    Seu cheiro, seu beijo, sua voz...`,
   },
-*/
 
-  /*
   {
     titulo: "Carta 5 - É a Aelin",
     texto: `Ana, a Aelin tem seus momentos, não é? Agora consigo entender...
@@ -76,30 +65,24 @@ Sinto sua falta.`,
   
       Será loucura pensar que estavámos destinadas a se achar em meio ao caos da vida?
   
-     Acredito que não. Eu já sonhava com você e seus olhos. Ela já tinha me mostrado que você surgiria.
+     Acredito que não. Eu já sonhava com você e seus olhos.
   
-     Por que não ficar? Por que não voltar?
+     Tudo mudou, mas por que não ficar? 
   
      Sinto sua falta.`,
   },
-*/
 
-  /*
   {
     titulo: "Carta 6 - É a Yrene",
     texto: `Ana, você nunca me falou sobre a Yrene, mas ela falou algo que me chamou atenção:
   
     "Onde você for, meu coração vai junto. Não há distância ou guerra que possa diminuir o que sinto por você."
   
-     Minha paixão parece só aumentar.
-  
      Você realmente anda por aí carregando algo meu.
   
     Saudades.`,
   },
-  */
 
-  /*
   {
     titulo: "Carta 7 - Elide",
     texto: `Ana, é um tanto quanto:
@@ -114,9 +97,7 @@ Sinto sua falta.`,
   
       Estou com saudades.`,
   },
-  */
 
-  /*
   {
     titulo: "Carta 8 - É a Celaena",
     texto: `Ana, ainda é:
@@ -132,9 +113,7 @@ Sinto sua falta.`,
   
   Sinto sua falta.`,
   },
-  */
 
-  /*
   {
     titulo: "Carta 9 - É a Lysandra",
     texto: `Ana, sempre foi:
@@ -149,9 +128,7 @@ Sinto sua falta.`,
 
   Saudades.`,
   },
-*/
 
-  /*
   {
     titulo: "Carta 10 - É o Dorian",
     texto: `Ana,
@@ -166,8 +143,6 @@ Sinto sua falta.`,
 
   Saudades.`,
   },
-
-  */
 
   {
     titulo: "Carta 11 - É o Chaol",
@@ -190,7 +165,6 @@ Sinto sua falta.`,
     linkGirassol: "https://emilaynerodrigues.github.io/girassois-para-ana/",
   },
 
-  /*
   {
     titulo: "Carta 12 - É o Lorcan",
     texto: `Ana,
@@ -199,15 +173,11 @@ Sinto sua falta.`,
 
   Eu entendo um pouco.
 
-  Porque, quando se trata de você, eu atravessaria qualquer distância só para saber que você está bem.
-
-  Eu vou onde for preciso.
+  Porque, quando se trata de você, eu vou onde for preciso.
 
   Saudades.`,
   },
-  */
 
-  /*
   {
     titulo: "Carta 13 - Sou eu",
     texto: `Ana, Vênus é sobre você!
@@ -229,9 +199,6 @@ Sinto sua falta.`,
   Sinto sua falta.`,
   },
 
-  */
-
-  /*
   {
     titulo: "Carta X - Estou com dor",
     texto: `Ana, sinto que escrevo cartas a um ser divino.
@@ -248,6 +215,4 @@ Continua sendo você.
 
 Saudades,`,
   },
-  
-*/
 ];

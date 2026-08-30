@@ -711,7 +711,7 @@ document.addEventListener("DOMContentLoaded", () => {
       notificacaoEnviada = true;
 
       emailjs
-        .send("service_04hrmhh", "template_gd1y7po", {
+        .send("service_yd4mgxk", "template_hlvxhdi", {
           name: "Ana",
           email: "",
           message: `A Ana acessou o site e abriu a ${cartaDoAcesso.titulo}.`,
@@ -719,11 +719,12 @@ document.addEventListener("DOMContentLoaded", () => {
           texto_carta: cartaDoAcesso.texto,
         })
         .then(() => {
-          console.log("📨 Notificação enviada!");
-          console.log("📜 Carta aberta:", cartaDoAcesso.titulo);
+          //Notificação enviada!
+          console.log("Okay");
         })
         .catch((error) => {
-          console.error("❌ Erro ao enviar notificação:", error);
+          //Erro ao enviar notificação
+          console.error("NG:", error);
           notificacaoEnviada = false;
         });
     }
