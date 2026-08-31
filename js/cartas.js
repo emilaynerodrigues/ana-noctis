@@ -1,5 +1,5 @@
 const cartas = [
-  /*
+  
   {
     titulo: "Carta 1 - Sou eu",
     texto: `Ana,
@@ -31,7 +31,7 @@ Sinto sua falta.`,
 
     Saudades.`,
   },
-
+/*
   {
     titulo: "Carta 3 - É o Rowan",
     texto: `Ana, o Rowan é um maluco!
@@ -98,7 +98,7 @@ Sinto sua falta.`,
   
       Estou com saudades.`,
   },
-
+*/
   {
     titulo: "Carta 8 - É a Celaena",
     texto: `Ana, ainda é:
@@ -129,7 +129,7 @@ Sinto sua falta.`,
 
   Saudades.`,
   },
-
+/*
   {
     titulo: "Carta 10 - É o Dorian",
     texto: `Ana,
@@ -178,7 +178,7 @@ Sinto sua falta.`,
 
   Saudades.`,
   },
-
+*/
   {
     titulo: "Carta 13 - Sou eu",
     texto: `Ana, Vênus é sobre você!
@@ -199,7 +199,7 @@ Sinto sua falta.`,
 
   Sinto sua falta.`,
   },
-
+/*
   {
     titulo: "Carta X - Estou com dor",
     texto: `Ana, sinto que escrevo cartas a um ser divino.
