@@ -1,4 +1,5 @@
 const cartas = [
+  /*
   {
     titulo: "Carta 1 - Sou eu",
     texto: `Ana,
@@ -214,5 +215,20 @@ Você vive nos meus pensamentos e me recuso a pensar que você não lembre de na
 Continua sendo você. 
 
 Saudades,`,
+  },
+  */
+  {
+    titulo: "Carta D - Despedida",
+    texto: `Ana, 
+
+Somente eu e você sabemos o que foi dito, compartilhado e sentido.
+
+Não me resumo ao que foi dito e você sabe.
+
+Espero que fique bem e seja feliz em suas escolhas.
+
+Você sempre terá pra onde voltar.
+
+Existe uma lógica para a distribuição das cartas, espero que essa chegue a você.`,
   },
 ];
