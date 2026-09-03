@@ -1,5 +1,5 @@
 const cartas = [
-  /*
+  
   {
     titulo: "Carta 1 - Sou eu",
     texto: `Ana,
@@ -179,7 +179,7 @@ Sinto sua falta.`,
   Porque, quando se trata de você, eu vou onde for preciso.
 
   Saudades.`,
-  }*/
+  },
 
   {
     titulo: "Carta 13 - Sou eu",
@@ -201,7 +201,7 @@ Sinto sua falta.`,
 
   Sinto sua falta.`,
   },
-/*
+
   {
     titulo: "Carta X - Estou com dor",
     texto: `Ana, sinto que escrevo cartas a um ser divino.
@@ -218,7 +218,7 @@ Continua sendo você.
 
 Saudades,`,
   },
-*/
+/*
   {
     titulo: "Carta D - Despedida",
     texto: `Ana, 
@@ -232,5 +232,5 @@ Espero que fique bem e seja feliz em suas escolhas.
 Você ainda me tem e sempre terá pra onde voltar.
 
 Existe uma lógica para a distribuição das cartas, espero que essa chegue a você.`,
-  },
+  },*/
 ];
