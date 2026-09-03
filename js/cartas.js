@@ -1,5 +1,5 @@
 const cartas = [
-  
+  /*
   {
     titulo: "Carta 1 - Sou eu",
     texto: `Ana,
@@ -18,6 +18,7 @@ Eu amo você.
 
 Sinto sua falta.`,
   },
+  
 
   {
     titulo: "Carta 2 - É a Aelin",
@@ -31,7 +32,7 @@ Sinto sua falta.`,
 
     Saudades.`,
   },
-/*
+
   {
     titulo: "Carta 3 - É o Rowan",
     texto: `Ana, o Rowan é um maluco!
@@ -98,7 +99,7 @@ Sinto sua falta.`,
   
       Estou com saudades.`,
   },
-*/
+
   {
     titulo: "Carta 8 - É a Celaena",
     texto: `Ana, ainda é:
@@ -129,7 +130,8 @@ Sinto sua falta.`,
 
   Saudades.`,
   },
-/*
+  
+
   {
     titulo: "Carta 10 - É o Dorian",
     texto: `Ana,
@@ -178,7 +180,7 @@ Sinto sua falta.`,
 
   Saudades.`,
   },
-*/
+
   {
     titulo: "Carta 13 - Sou eu",
     texto: `Ana, Vênus é sobre você!
@@ -199,7 +201,7 @@ Sinto sua falta.`,
 
   Sinto sua falta.`,
   },
-/*
+
   {
     titulo: "Carta X - Estou com dor",
     texto: `Ana, sinto que escrevo cartas a um ser divino.
@@ -223,12 +225,14 @@ Saudades,`,
 
 Somente eu e você sabemos o que foi dito, compartilhado e sentido.
 
-Não me resumo ao que foi dito, e você sabe.
+Não se resumo ao que foi dito e você sabe.
 
 Espero que fique bem e seja feliz em suas escolhas.
 
-Você sempre terá para onde voltar.
+Você ainda me tem e sempre terá pra onde voltar.
 
-Existe uma lógica para a distribuição das cartas. Espero que essa chegue a você.`,
+Não esquece que temos um compromisso em junho do próximo ano. 
+
+Existe uma lógica para a distribuição das cartas, espero que essa chegue a você.`,
   },
 ];
