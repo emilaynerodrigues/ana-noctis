@@ -794,7 +794,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Quando terminar de escrever, transforma o 🌻 em link
       if (cartaDoAcesso.linkGirassol) {
-        // ...
+        const texto = textoCarta.textContent;
+        const girassol = "🌻";
+        const posicao = texto.lastIndexOf(girassol);
+
+        if (posicao !== -1) {
+          const antes = texto.slice(0, posicao);
+          const depois = texto.slice(posicao + girassol.length);
+
+          textoCarta.textContent = "";
+
+          textoCarta.appendChild(document.createTextNode(antes));
+
+          const link = document.createElement("a");
+
+          link.href = cartaDoAcesso.linkGirassol;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.className = "link-girassol";
+          link.setAttribute("aria-label", "Abrir o girassol");
+          link.textContent = girassol;
+
+          textoCarta.appendChild(link);
+
+          textoCarta.appendChild(document.createTextNode(depois));
+        }
       }
 
       setTimeout(() => {

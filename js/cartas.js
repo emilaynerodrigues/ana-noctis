@@ -20,7 +20,7 @@ Sinto sua falta.`,
 
   {
     titulo: "Carta 2 - É a Aelin",
-    texto: `Ana, Aelin realmente disse isso?
+    texto: `Ana,
 
     "Eu te amo. Além das estrelas, além do tempo, além da própria vida. Eu pertenço a você, e você pertence a mim. Não há nada neste mundo, ou em qualquer outro, que possa mudar isso."
 
@@ -33,7 +33,7 @@ Sinto sua falta.`,
 
   {
     titulo: "Carta 3 - É o Rowan",
-    texto: `Ana, o Rowan é um maluco!
+    texto: `Ana, o Rowan é maluco.
 
     "Eu a reivindico. Aelin Galathynius. Como minha parceira, minha rainha e minha igual. Se eu tiver que quebrar o mundo para mantê-la a meu lado, eu o farei. Não há vida para mim sem você."
 
@@ -59,7 +59,7 @@ Sinto sua falta.`,
 
   {
     titulo: "Carta 5 - É a Aelin",
-    texto: `Ana, a Aelin tem seus momentos, não é? Agora consigo entender...
+    texto: `Ana,
   
     "Eu te encontrei. No escuro, na tempestade, na dor mais profunda... Eu te encontrei e você me encontrou. Eu sou sua, Rowan. Sempre fui, desde o momento em que nossas almas se reconheceram."
   
@@ -74,7 +74,7 @@ Sinto sua falta.`,
 
   {
     titulo: "Carta 6 - É a Yrene",
-    texto: `Ana, você nunca me falou sobre a Yrene, mas ela falou algo que me chamou atenção:
+    texto: `Ana,
   
     "Onde você for, meu coração vai junto. Não há distância ou guerra que possa diminuir o que sinto por você."
   
@@ -150,9 +150,7 @@ Sinto sua falta.`,
 
   "Eu passei tanto tempo me odiando, Yrene, odiando o que me tornei. Mas quando olho para você, só consigo ver esperança. Você é a minha luz no meio da escuridão."
 
-  Você também foi isso para mim.
-
-  Uma luz em uma época em que eu nem sabia direito que estava no escuro.
+  Você foi a luz em uma época em que eu nem sabia direito que estava no escuro.
 
   Talvez seja por isso que seja tão difícil...
 
@@ -162,7 +160,8 @@ Sinto sua falta.`,
 
   ~~ clique no girassol ~~ `,
 
-    linkGirassol: "https://emilaynerodrigues.github.io/girassois-para-ana/",
+    linkGirassol:
+      "https://emilaynerodrigues.github.io/girassois-para-ana/?origem=carta11",
   },
 
   {
@@ -180,7 +179,7 @@ Sinto sua falta.`,
 
   {
     titulo: "Carta 13 - Vênus",
-    texto: `Ana, Vênus é sobre você!
+    texto: `Ana, Vênus é sobre você.
 
      "I thought I'd never find you
       I convinced myself that I would never find you
@@ -229,5 +228,43 @@ Cada estrela, cada carta e cada detalhe foi feito pensando em você. Algumas coi
 É a sua noite. 🌙
 
     `,
+  },
+
+  {
+    titulo: "Carta 16 - Ponte e luz",
+    texto: `Ana,
+
+"Seja ponte, seja luz. Quando o ferro derreter, quando as flores brotarem de campos de sangue... Que a terra seja testemunha e volte para casa."
+
+Que um dia tudo encontre seu lugar.
+
+Estivemos aqui aprendendo ser.
+`,
+  },
+
+  {
+    titulo: "Carta 17 - Você",
+    texto: `Ana,
+
+"Você também me faz querer viver, Aelin Galathynius. Não existir, viver.
+
+Passei séculos perambulando o mundo de impérios a reinos e desertos, nunca me estabeleci, jamais parei... nem por um momento.
+
+Estava sempre olhando para o horizonte, sempre imaginando o que esperava do outro lado do oceano seguinte, sobre a montanha seguinte.
+
+Mas acho que o tempo todo, durante todos aqueles séculos, só estava procurando por você."`,
+  },
+
+  {
+    titulo: "Carta 18 - Rowan",
+    texto: `Ana,
+
+"Eu amo você. Não há limite para o que posso dar, não preciso de tempo. Mesmo quando este mundo for um sussurro de terra esquecido em meio às estrelas, amarei você."
+
+É isso.
+
+Não existe ego. 
+
+Não existe nada além disso.`,
   },
 ];
