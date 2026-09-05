@@ -451,12 +451,12 @@ body {
 }
 
 .open-text {
-  margin: 20px 5px 5px;
+  margin: 20px 5px 0px;
   padding: 0;
   border: none;
   background: none;
   color: inherit;
-  font-size: 12px;
+  font-size: 14px;
   cursor: pointer;
 }
 
@@ -530,17 +530,31 @@ footer p {
    CARTA
 ========================= */
 
+/* =========================================
+   CARTA / MODAL
+========================================= */
+
 .letter-overlay {
   position: fixed;
+
   inset: 0;
+
   z-index: 100;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   background: rgba(10, 18, 35, 0.55);
+
   backdrop-filter: blur(4px);
+
   opacity: 0;
+
   visibility: hidden;
+
   transition:
     opacity 800ms ease,
     visibility 0s linear 800ms;
@@ -548,23 +562,30 @@ footer p {
 
 .letter-overlay.open {
   opacity: 1;
+
   visibility: visible;
+
   transition:
     opacity 800ms ease,
     visibility 0s linear 0s;
 }
 
+/* =========================================
+   FOLHA DA CARTA
+========================================= */
+
 .letter {
   position: relative;
   width: min(650px, 82vw);
-  max-height: 75vh;
-  padding: 45px;
-  overflow-y: auto;
+  height: auto;
+  max-height: none;
+  padding: 30px;
+  overflow: visible;
   background: radial-gradient(
     ellipse at center,
     rgba(255, 249, 230, 0.95) 0%,
     rgba(247, 238, 219, 0.98) 65%,
-    rgba(224, 207, 171, 0.95) 100%
+    rgba(235, 225, 205, 0.95) 100%
   );
   border: 1px solid rgba(155, 119, 57, 0.55);
   box-shadow:
@@ -576,35 +597,59 @@ footer p {
   transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* SOMENTE CARTAS GRANDES */
+
+.letter.letter-scroll {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
 .letter-overlay.open .letter {
   transform: translateY(0) scale(1);
 }
+
+/* =========================================
+   TEXTURA SUAVE DA FOLHA
+========================================= */
 
 .letter::before {
   content: "";
   position: absolute;
   inset: 0;
+
   pointer-events: none;
+
   background: radial-gradient(
     ellipse at center,
     transparent 55%,
     rgba(120, 85, 35, 0.08) 80%,
     rgba(90, 60, 25, 0.18) 100%
   );
+
   mix-blend-mode: multiply;
 }
 
+/* =========================================
+   DECORAÇÃO NO TOPO
+========================================= */
+
 .letter-decoration {
   position: absolute;
-  top: 25px;
+  top: 18px;
   left: 50%;
   color: #dbaf50;
-  font-size: 18px;
+  font-size: 27px;
+  line-height: 1;
   opacity: 0.75;
   transform: translateX(-50%);
 }
 
+/* =========================================
+   CONTEÚDO
+========================================= */
+
 .letter-content {
+  position: relative;
   color: #1e2c4f;
   font-family: serif;
   font-size: 14px;
@@ -612,10 +657,35 @@ footer p {
   text-align: left;
 }
 
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.letter-heading {
+  position: relative;
+  text-align: center;
+}
+
+#letter-title {
+  margin: 15px 0 5px 0px;
+  color: #1e2c4f;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* =========================================
+   TEXTO DA CARTA
+========================================= */
+
 #letter-text {
   margin: 0;
   white-space: pre-line;
 }
+
+/* =========================================
+   CITAÇÕES
+========================================= */
 
 .letter-intro {
   margin-bottom: 25px;
@@ -628,10 +698,26 @@ footer p {
   opacity: 0.92;
 }
 
+/* =========================================
+   LINHA DECORATIVA
+========================================= */
+
+.letter-divider {
+  width: 100%;
+  height: 1px;
+  margin: 15px 0 15px;
+  background: rgba(219, 175, 80, 0.55);
+}
+
+/* =========================================
+   ASSINATURA
+========================================= */
+
 #letter-signature {
-  margin-top: 35px;
-  color: #1e2c4f;
-  text-align: right;
+  margin: 0 0 5px;
+  color: #dbaf50;
+  text-align: center;
+  font-size: 18px;
   font-style: italic;
   opacity: 0;
   transform: translateY(10px);
@@ -645,16 +731,46 @@ footer p {
   transform: translateY(0);
 }
 
+/* =========================================
+   ESTRELA FINAL
+========================================= */
+
+.letter-star {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  color: #dbaf50;
+  font-family: serif;
+  font-size: 16px;
+  text-align: center;
+  opacity: 0.85;
+}
+
+/* =========================================
+   BOTÃO FECHAR
+========================================= */
+
 .close-letter {
   position: absolute;
+
   top: 15px;
+
   right: 18px;
+
+  z-index: 2;
+
   border: none;
+
   background: transparent;
+
   color: #1e2c4f;
+
   font-size: 26px;
+
   font-weight: 300;
+
   cursor: pointer;
+
   transition:
     color 300ms ease,
     transform 300ms ease;
@@ -662,7 +778,44 @@ footer p {
 
 .close-letter:hover {
   color: #dbaf50;
+
   transform: rotate(90deg);
+}
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+  .letter {
+    width: 88vw;
+
+    max-height: 78vh;
+
+    padding: 40px 30px;
+  }
+
+  .letter-decoration {
+    top: 15px;
+
+    font-size: 24px;
+  }
+
+  .letter-label {
+    font-size: 11px;
+
+    letter-spacing: 2.5px;
+  }
+
+  #letter-title {
+    font-size: 22px;
+  }
+
+  .letter-content {
+    font-size: 14px;
+
+    line-height: 1.9;
+  }
 }
 
 /* =========================

@@ -9,7 +9,7 @@
 
     <link rel="icon" href="img/favicon.png" type="image/x-icon" />
 
-    <link rel="stylesheet" href="style.css?v=9.5" />
+    <link rel="stylesheet" href="style.css?v=10.5" />
   </head>
 
   <body>
@@ -928,7 +928,7 @@
               </span>
             </div>
 
-            <button id="open-letter" class="open-text">Clique aqui</button>
+            <button id="open-letter" class="open-text">CLIQUE AQUI</button>
 
             <div class="arrow">
               <svg
@@ -969,21 +969,33 @@
             </div>
           </section>
 
-          <!-- ÁREA DA CARTA / FRASES -->
+          <!-- ÁREA DE FRASES - ATE QUE A ESCURIDÃO NOS REIVINDIQUE-->
           <section class="content">
             <p id="texto"></p>
           </section>
 
-          <!--AREA DA CARTA-->
+          <!-- ÁREA DA CARTA -->
           <div id="letter-overlay" class="letter-overlay">
             <div class="letter">
               <button id="close-letter" class="close-letter">×</button>
 
+              <div class="letter-decoration">⚔︎</div>
+
               <div class="letter-content">
+                <div class="letter-heading">
+                  <h2 id="letter-title"></h2>
+                </div>
+
+                <div class="letter-divider"></div>
+
                 <p id="letter-text"></p>
 
-                <p id="letter-signature">Estou te esperando.</p>
+                <div class="letter-divider"></div>
+
+                <p id="letter-signature">Estou te esperando</p>
               </div>
+
+              <div class="letter-star">✦</div>
             </div>
           </div>
 
@@ -1016,7 +1028,7 @@
     <audio id="musica-site" preload="auto">
       <source src="audio/Venus - Sleeping At Last.mp3" type="audio/mpeg" />
     </audio>
-
+    <!--
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
@@ -1027,8 +1039,8 @@
         publicKey: "U6D8LsiQBn2L3RqW7",
       });
     </script>
-
-    <script src="js/cartas.js?v=9.5"></script>
-    <script src="js/script.js?v=9.5"></script>
+-->
+    <script src="js/cartas.js?v=10.5"></script>
+    <script src="js/script.js?v=10.5"></script>
   </body>
 </html>

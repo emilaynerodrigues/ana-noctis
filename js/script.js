@@ -664,6 +664,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let notificacaoEnviada = false;
   let indiceCartaAtual = null;
 
+  // =====================================================
+  // ESCOLHER CARTA SEM REPETIR
+  // =====================================================
+
   function escolherCarta() {
     if (!cartas || cartas.length === 0) {
       console.error("❌ Nenhuma carta foi encontrada.");
@@ -673,6 +677,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const chave = "ana_noctis_cartas_lidas";
 
     let cartasLidas = JSON.parse(localStorage.getItem(chave)) || [];
+
+    // Remove possíveis duplicatas ou índices inválidos
+    cartasLidas = [
+      ...new Set(
+        cartasLidas.filter(
+          (index) =>
+            Number.isInteger(index) && index >= 0 && index < cartas.length,
+        ),
+      ),
+    ];
 
     // Se todas as cartas já foram recebidas,
     // começa um novo ciclo.
@@ -685,7 +699,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .map((_, index) => index)
       .filter((index) => !cartasLidas.includes(index));
 
-    // Sorteia uma carta
+    // Sorteia uma carta entre as disponíveis
     const indice = disponiveis[Math.floor(Math.random() * disponiveis.length)];
 
     // Marca como recebida
@@ -700,8 +714,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const overlay = document.getElementById("letter-overlay");
     const textoCarta = document.getElementById("letter-text");
     const assinatura = document.getElementById("letter-signature");
+    const tituloCarta = document.getElementById("letter-title");
 
-    if (!overlay || !textoCarta || !assinatura || !cartaDoAcesso) return;
+    if (
+      !overlay ||
+      !textoCarta ||
+      !assinatura ||
+      !tituloCarta ||
+      !cartaDoAcesso
+    ) {
+      return;
+    }
 
     // =====================================================
     // NOTIFICAÇÃO
@@ -719,11 +742,9 @@ document.addEventListener("DOMContentLoaded", () => {
           texto_carta: cartaDoAcesso.texto,
         })
         .then(() => {
-          //Notificação enviada!
           console.log("Okay");
         })
         .catch((error) => {
-          //Erro ao enviar notificação
           console.error("NG:", error);
           notificacaoEnviada = false;
         });
@@ -735,10 +756,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     overlay.classList.add("open");
 
+    tituloCarta.textContent = cartaDoAcesso.titulo;
+
     textoCarta.textContent = "";
     assinatura.classList.remove("show");
 
+    const letter = overlay.querySelector(".letter");
+    letter.classList.remove("letter-scroll");
+
     const carta = cartaDoAcesso.texto;
+
+    // Carta 13 é maior e pode precisar de rolagem
+    if (cartaDoAcesso.titulo.startsWith("Carta 13")) {
+      overlay.querySelector(".letter").classList.add("letter-scroll");
+    }
+
     let letra = 0;
     let textoAtual = "";
 
@@ -746,30 +778,23 @@ document.addEventListener("DOMContentLoaded", () => {
       if (letra < carta.length) {
         textoAtual += carta[letra];
         textoCarta.textContent = textoAtual;
+
         letra++;
+
         setTimeout(escreverCarta, 35);
         return;
       }
 
+      // Verifica se a carta ficou grande demais
+      requestAnimationFrame(() => {
+        if (letter.scrollHeight > window.innerHeight * 0.75) {
+          letter.classList.add("letter-scroll");
+        }
+      });
+
       // Quando terminar de escrever, transforma o 🌻 em link
       if (cartaDoAcesso.linkGirassol) {
-        const texto = textoCarta.textContent;
-        const girassol = "🌻";
-        const posicao = texto.lastIndexOf(girassol);
-
-        if (posicao !== -1) {
-          const antes = texto.slice(0, posicao);
-          const depois = texto.slice(posicao + girassol.length);
-
-          textoCarta.innerHTML =
-            antes +
-            `<a href="${cartaDoAcesso.linkGirassol}" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="link-girassol"
-            aria-label="Abrir o girassol">${girassol}</a>` +
-            depois;
-        }
+        // ...
       }
 
       setTimeout(() => {
@@ -833,8 +858,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // =====================================================
 
   async function iniciar() {
-    // Escolhe UMA carta para este acesso
-    sortearCarta();
+    // Escolhe UMA carta para este acesso,
+    // sem repetir até completar o ciclo
+    cartaDoAcesso = escolherCarta();
 
     await desenharGrupoJunto("pontinhos", 400);
 
@@ -977,7 +1003,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setTimeout(() => {
         escrever();
-      }, 1800);
+      }, 500);
     }
   }
 

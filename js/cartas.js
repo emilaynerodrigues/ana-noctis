@@ -1,7 +1,6 @@
 const cartas = [
-  
   {
-    titulo: "Carta 1 - Sou eu",
+    titulo: "Carta 1 - Estrelas",
     texto: `Ana,
 
 "Até que todas as estrelas se apaguem. Até que o tempo pare. Eu sou seu."
@@ -18,7 +17,6 @@ Eu amo você.
 
 Sinto sua falta.`,
   },
-  
 
   {
     titulo: "Carta 2 - É a Aelin",
@@ -46,7 +44,7 @@ Sinto sua falta.`,
 
   {
     titulo: "Carta 4 - Sou eu",
-    texto: `Ana, agora sou eu:
+    texto: `Ana,
 
       Os dias são tão lentos sem você. Parece que ando acumulando histórias sem sentido...
   
@@ -86,7 +84,7 @@ Sinto sua falta.`,
   },
 
   {
-    titulo: "Carta 7 - Elide",
+    titulo: "Carta 7 - É a Elide",
     texto: `Ana, é um tanto quanto:
   
     "Eu não me importo com o seu passado ou com o que os outros dizem. Eu amo você, Lorcan, exatamente como você é. E vou escolher você todas as vezes."
@@ -130,7 +128,6 @@ Sinto sua falta.`,
 
   Saudades.`,
   },
-  
 
   {
     titulo: "Carta 10 - É o Dorian",
@@ -148,7 +145,7 @@ Sinto sua falta.`,
   },
 
   {
-    titulo: "Carta 11 - É o Chaol",
+    titulo: "Carta 11 - É o Chaol e o Girassol",
     texto: `Ana,
 
   "Eu passei tanto tempo me odiando, Yrene, odiando o que me tornei. Mas quando olho para você, só consigo ver esperança. Você é a minha luz no meio da escuridão."
@@ -182,28 +179,26 @@ Sinto sua falta.`,
   },
 
   {
-    titulo: "Carta 13 - Sou eu",
+    titulo: "Carta 13 - Vênus",
     texto: `Ana, Vênus é sobre você!
 
      "I thought I'd never find you
       I convinced myself that I would never find you
       When suddenly I saw you"
 
-  No meio de tanta gente, tantos caminhos e tantas coisas que poderiam ter acontecido, eu encontrei você.
+  No meio de tanta gente, eu encontrei você.
 
-  Talvez seja isso o mais louco disso tudo.
+  O universo é enorme. A vida é enorme. Poderíamos ter ido para lugares completamente diferentes.
 
-  O universo é enorme. A vida é enorme. Existem milhares de caminhos que poderiam ter nos levado para lugares completamente diferentes.
-
-  Mas, por algum motivo, nossos caminhos se encontraram.
+  Mas, por algum motivo, nos encontramos.
 
   Tem sido difícil fingir que você não me atravessou.
-
+  
   Sinto sua falta.`,
   },
 
   {
-    titulo: "Carta X - Estou com dor",
+    titulo: "Carta 14 - Ser divino",
     texto: `Ana, sinto que escrevo cartas a um ser divino.
 
 Tudo em mim mudou desde que você disse que estava tão apaixonada por mim quanto eu por você. 
@@ -218,19 +213,21 @@ Continua sendo você.
 
 Saudades,`,
   },
-/*
+
   {
-    titulo: "Carta D - Despedida",
-    texto: `Ana, 
+    titulo: "Carta 15 - Ana Noctis",
+    texto: `Ana,
 
-Somente eu e você sabemos o que foi dito, compartilhado e sentido.
+Ana Noctis significa “A Noite de Ana”.
 
-Não se resumo ao que foi dito e você sabe.
+Eu fiz esse site porque não sabia mais onde colocar tudo isso que sinto. Então coloquei aqui.
 
-Espero que fique bem e seja feliz em suas escolhas.
+Cada estrela, cada carta e cada detalhe foi feito pensando em você. Algumas coisas são lembranças, grande parte são referências, mas nada está aqui por acaso.
 
-Você ainda me tem e sempre terá pra onde voltar.
+É sobre você e pra você.
 
-Existe uma lógica para a distribuição das cartas, espero que essa chegue a você.`,
-  },*/
+É a sua noite. 🌙
+
+    `,
+  },
 ];
