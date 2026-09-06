@@ -1,5 +1,5 @@
 const cartas = [
-  /* {
+  {
     titulo: "Carta 1 - Estrelas",
     texto: `Ana,
 
@@ -13,11 +13,9 @@ Como é fácil para você? Estou enlouquecendo de tanta saudade de você.
 
 Será que tudo isso já pode acabar? Já não foi o suficiente?
 
-Eu amo você.
-
 Sinto sua falta.`,
   },
-
+  /*
   {
     titulo: "Carta 2 - É a Aelin",
     texto: `Ana,
@@ -82,7 +80,7 @@ Sinto sua falta.`,
   
     Saudades.`,
   },
-
+*/
   {
     titulo: "Carta 7 - É a Elide",
     texto: `Ana, é um tanto quanto:
@@ -97,7 +95,7 @@ Sinto sua falta.`,
   
       Estou com saudades.`,
   },
-
+  /*
   {
     titulo: "Carta 8 - É a Celaena",
     texto: `Ana, ainda é:
@@ -143,6 +141,7 @@ Sinto sua falta.`,
 
   Saudades.`,
   },
+*/
 
   {
     titulo: "Carta 11 - É o Chaol e o Girassol",
@@ -195,7 +194,7 @@ Sinto sua falta.`,
   
   Sinto sua falta.`,
   },
-
+  /*
   {
     titulo: "Carta 14 - Ser divino",
     texto: `Ana, sinto que escrevo cartas a um ser divino.
@@ -212,7 +211,7 @@ Continua sendo você.
 
 Saudades,`,
   },
-
+*/
   {
     titulo: "Carta 15 - Ana Noctis",
     texto: `Ana,
@@ -241,7 +240,7 @@ Que um dia tudo encontre seu lugar.
 Estivemos aqui aprendendo ser.
 `,
   },
-*/
+
   {
     titulo: "Carta 17 - Você",
     texto: `Ana,
@@ -254,7 +253,7 @@ Estava sempre olhando para o horizonte, sempre imaginando o que esperava do outr
 
 Mas acho que o tempo todo, durante todos aqueles séculos, só estava procurando por você."`,
   },
-  /*
+
   {
     titulo: "Carta 18 - Rowan",
     texto: `Ana,
@@ -267,7 +266,6 @@ Não existe ego.
 
 Não existe nada além disso.`,
   },
-  */
   {
     titulo: "Carta 19 - É só eu",
     texto: `Ana,
