@@ -1,5 +1,5 @@
 const cartas = [
-  {
+  /* {
     titulo: "Carta 1 - Estrelas",
     texto: `Ana,
 
@@ -41,7 +41,7 @@ Sinto sua falta.`,
 
     Saudades!`,
   },
-
+*/
   {
     titulo: "Carta 4 - Sou eu",
     texto: `Ana,
@@ -56,7 +56,7 @@ Sinto sua falta.`,
   
       Seu cheiro, seu beijo, sua voz...`,
   },
-
+  /*
   {
     titulo: "Carta 5 - É a Aelin",
     texto: `Ana,
@@ -241,7 +241,7 @@ Que um dia tudo encontre seu lugar.
 Estivemos aqui aprendendo ser.
 `,
   },
-
+*/
   {
     titulo: "Carta 17 - Você",
     texto: `Ana,
@@ -254,7 +254,7 @@ Estava sempre olhando para o horizonte, sempre imaginando o que esperava do outr
 
 Mas acho que o tempo todo, durante todos aqueles séculos, só estava procurando por você."`,
   },
-
+  /*
   {
     titulo: "Carta 18 - Rowan",
     texto: `Ana,
@@ -266,5 +266,16 @@ Mas acho que o tempo todo, durante todos aqueles séculos, só estava procurando
 Não existe ego. 
 
 Não existe nada além disso.`,
+  },
+  */
+  {
+    titulo: "Carta 19 - É só eu",
+    texto: `Ana,
+
+Não há muito a dizer, só sinto sua falta.
+
+E estou enlouquecendo de saudades.
+
+    `,
   },
 ];
