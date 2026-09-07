@@ -266,6 +266,7 @@ Não existe ego.
 
 Não existe nada além disso.`,
   },
+  /*
   {
     titulo: "Carta 19 - É só eu",
     texto: `Ana,
@@ -276,4 +277,5 @@ E estou enlouquecendo de saudades.
 
     `,
   },
+  */
 ];
