@@ -230,7 +230,7 @@ Cada estrela, cada carta e cada detalhe foi feito pensando em você. Algumas coi
 
     `,
   },
-*/
+
   {
     titulo: "Carta 16 - Ponte e luz",
     texto: `Ana,
@@ -242,7 +242,7 @@ Que um dia tudo encontre seu lugar.
 Estivemos aqui aprendendo ser.
 `,
   },
-/*
+
   {
     titulo: "Carta 17 - Você",
     texto: `Ana,
@@ -270,11 +270,13 @@ Não existe nada além disso.`,
   },
 */
   {
-    titulo: "Segredo do céu",
+    titulo: "O segredo do céu",
     texto: `Ana,
 
 Existe um segredo escondido no céu.
 
-Boa sorte encontrando. :)`,
+Boa sorte encontrando. :)
+
+~~ Dica: clique em uma estrela! ~~`,
   },
 ];
