@@ -362,9 +362,9 @@ document.addEventListener("DOMContentLoaded", () => {
       estrela.getBoundingClientRect();
 
       estrela.style.transition = `
-        stroke ${duracao}ms linear,
-        stroke-dashoffset ${duracao}ms ease
-      `;
+      stroke ${duracao}ms linear,
+      stroke-dashoffset ${duracao}ms ease
+    `;
 
       requestAnimationFrame(() => {
         estrela.style.stroke = "#FFFFFF";
@@ -374,7 +374,14 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         estrela.style.transition = "none";
         estrela.style.stroke = "#FFFFFF";
-        estrela.style.fill = "none";
+
+        if (estrela.classList.contains("estrela-secreta")) {
+          estrela.style.fill = "#FFFFFF";
+          estrela.style.filter = "drop-shadow(0 0 2px rgba(255,255,255,0.35))";
+        } else {
+          estrela.style.fill = "none";
+        }
+
         estrela.style.strokeDasharray = "";
         estrela.style.strokeDashoffset = "";
 
@@ -483,10 +490,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // =====================================================
 
   function prepararModoNoturno() {
-    document.querySelectorAll("#estrelas-brancas path").forEach((estrela) => {
-      estrela.style.stroke = "#FFFFFF";
-      estrela.style.fill = "none";
-    });
+    document
+      .querySelectorAll("#estrelas-brancas path:not(.estrela-secreta)")
+      .forEach((estrela) => {
+        estrela.style.stroke = "#FFFFFF";
+        estrela.style.fill = "none";
+      });
 
     obterEstrelasConstelacoes().forEach((estrela) => {
       estrela.style.stroke = "#FFFFFF";
@@ -657,6 +666,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // =====================================================
+  // ESTRELA SECRETA
+  // =====================================================
+
+  function ativarEstrelaSecreta() {
+    const estrela = document.getElementById("estrela-branca16");
+
+    if (!estrela) return;
+
+    estrela.style.cursor = "pointer";
+
+    estrela.addEventListener("click", () => {
+      window.open("https://emilaynerodrigues.github.io/ana-noctis-countdown/", "_blank");
+    });
+  }
   // =====================================================
   // CARTA
   // =====================================================
@@ -1009,6 +1033,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     criarBrilhoEspada();
     aumentarBrilhoBaseEspada();
+    ativarEstrelaSecreta();
 
     // ===================================================
     // CONSTELAÇÕES

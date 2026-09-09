@@ -181,7 +181,6 @@ body {
 }
 
 #art.night-mode #estrelas-brancas path {
-  fill: #fff;
   stroke: #fff;
   animation: estrelaPiscar 4s ease-in-out infinite;
 }
@@ -254,7 +253,7 @@ body {
   0%,
   100% {
     transform: scale(0.82);
-    opacity: 0.55;
+    opacity: 0.75;
   }
 
   50% {
@@ -263,6 +262,11 @@ body {
   }
 }
 
+#art.night-mode .estrela-secreta {
+  fill: white;
+  cursor: pointer;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.35));
+}
 /* =========================
    CONSTELAÇÕES
 ========================= */
