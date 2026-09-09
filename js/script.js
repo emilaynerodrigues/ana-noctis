@@ -678,7 +678,32 @@ document.addEventListener("DOMContentLoaded", () => {
     estrela.style.cursor = "pointer";
 
     estrela.addEventListener("click", () => {
-      window.open("https://emilaynerodrigues.github.io/ana-noctis-countdown/", "_blank");
+      // Abre o site secreto
+      window.open(
+        "https://emilaynerodrigues.github.io/ana-noctis-countdown/?origem=segredo",
+        "_blank",
+      );
+
+      // Envia a notificação
+      if (!notificacaoEstrelaEnviada) {
+        notificacaoEstrelaEnviada = true;
+
+        emailjs
+          .send("service_yd4mgxk", "template_4gzu3ls", {
+            message: `
+      Ana encontrou o segredo escondido no céu
+      e clicou na estrela secreta.
+    `,
+            footer: "O segredo foi encontrado.",
+          })
+          .then(() => {
+            console.log("🌙 GOOD");
+          })
+          .catch((error) => {
+            console.error("❌ NG:", error);
+            notificacaoEstrelaEnviada = false;
+          });
+      }
     });
   }
   // =====================================================
@@ -687,6 +712,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let notificacaoEnviada = false;
   let indiceCartaAtual = null;
+  let notificacaoEstrelaEnviada = false;
 
   // =====================================================
   // ESCOLHER CARTA SEM REPETIR
