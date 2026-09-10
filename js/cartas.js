@@ -1,6 +1,5 @@
 const cartas = [
   
-  /*
   {
     titulo: "Carta 1 - Estrelas",
     texto: `Ana,
@@ -268,7 +267,7 @@ Não existe ego.
 
 Não existe nada além disso.`,
   },
-*/
+  
   {
     titulo: "O segredo do céu",
     texto: `Ana,
