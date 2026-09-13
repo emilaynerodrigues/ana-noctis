@@ -913,3 +913,12 @@ footer p {
   transform: scale(1.15);
   filter: drop-shadow(0 0 5px rgba(219, 175, 80, 0.7));
 }
+
+.ana-estrela {
+  color: #DBAF50;
+  font-size: 0.55em !important; 
+  margin-left: 5px;
+  margin-right: 5px;
+  vertical-align: middle;
+  text-shadow: 0 0 5px rgba(219, 175, 80, 0.6);
+}

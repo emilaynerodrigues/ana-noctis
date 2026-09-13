@@ -1,5 +1,4 @@
 const cartas = [
-  
   {
     titulo: "Carta 1 - Estrelas",
     texto: `Ana,
@@ -10,13 +9,9 @@ Tudo continua sendo sobre -você-. Você ainda tem -tudo- de mim.
 
 Meu desejo ainda é: "Ela, ela e ela".
 
-Como é fácil para você? Estou enlouquecendo de tanta saudade de você.
-
-Será que tudo isso já pode acabar? Já não foi o suficiente?
-
 Sinto sua falta.`,
   },
-  
+
   {
     titulo: "Carta 2 - É a Aelin",
     texto: `Ana,
@@ -42,110 +37,44 @@ Sinto sua falta.`,
   },
 
   {
-    titulo: "Carta 4 - Sou eu",
-    texto: `Ana,
-
-      Os dias são tão lentos sem você. Parece que ando acumulando histórias sem sentido...
-  
-      Todos os dias sinto sua falta e espero que tudo seja diferente no fim de cada um deles.
-  
-      Que mundo louco, não é?
-  
-      A verdade é que estou enlouquecendo de saudades.
-  
-      Seu cheiro, seu beijo, sua voz...`,
-  },
-  
-  {
-    titulo: "Carta 5 - É a Aelin",
+    titulo: "Carta 4 - É a Aelin",
     texto: `Ana,
   
     "Eu te encontrei. No escuro, na tempestade, na dor mais profunda... Eu te encontrei e você me encontrou. Eu sou sua, Rowan. Sempre fui, desde o momento em que nossas almas se reconheceram."
   
       Será loucura pensar que estávamos destinadas a nos encontrar em meio ao caos da vida?
   
-      Acredito que não. Eu já sonhava com você e seus olhos.
-  
-      Tudo mudou, mas por que não ficar?
+      Acredito que não. Eu já sonhava com você.
+
+      Você é meu sonho, lembra?
   
       Sinto sua falta.`,
   },
 
   {
-    titulo: "Carta 6 - É a Yrene",
+    titulo: "Carta 5 - É a Yrene",
     texto: `Ana,
   
     "Onde você for, meu coração vai junto. Não há distância ou guerra que possa diminuir o que sinto por você."
   
-      Você realmente anda por aí carregando algo meu.
+    Você realmente anda por aí carregando algo meu.
   
     Saudades.`,
   },
 
   {
-    titulo: "Carta 7 - É a Elide",
-    texto: `Ana, é um tanto quanto:
-  
-    "Eu não me importo com o seu passado ou com o que os outros dizem. Eu amo você, Lorcan, exatamente como você é. E vou escolher você todas as vezes."
-  
-    Adorava ouvir você falar e rir das suas histórias passadas. E sinto ódio por cada um que te machucou.
-  
-      Às vezes fico pensando...
-  
-      Eu continuo te escolhendo e não quero ser só uma passagem.
-  
-      Estou com saudades.`,
-  },
-  
-  {
-    titulo: "Carta 8 - É a Celaena",
+    titulo: "Carta 6 - É a Celaena",
     texto: `Ana, ainda é:
   
   "Eu sempre vou escolher você. Mesmo quando o mundo inteiro estiver rindo ou tentando nos separar, meu coração é seu."
   
-  Eu escolho você.
-  
-  Mesmo quando a distância pesa.
-  Mesmo quando seria mais fácil simplesmente deixar você ir, eu não consigo...
-  
-  Meu coração ainda chama você.
+  Eu ainda escolho você.
   
   Sinto sua falta.`,
   },
 
   {
-    titulo: "Carta 9 - É a Lysandra",
-    texto: `Ana, sempre foi:
-  
-  "Eu mudo de pele todos os dias e posso ser quem eu quiser, mas com você, Aedion... com você eu finalmente posso ser apenas eu mesma. E essa versão de mim te ama."
-
-  Talvez seja isso que eu mais gostava quando estava com você.
-
-  Eu não precisava ser nada além de mim.
-
-  E espero que, em algum lugar, você ainda se lembre dessa versão minha.
-
-  Saudades.`,
-  },
-
-  {
-    titulo: "Carta 10 - É o Dorian",
-    texto: `Ana,
-
-  "Você não é um monstro, Bruxa. E mesmo se fosse... eu ainda assim não conseguiria afastar meus olhos de você. Você é a tempestade mais bonita que já vi."
-
-  Eu nunca enxerguei você pelas coisas que deram errado.
-
-  Eu enxerguei você. Eu sinto você.
-
-  E, mesmo no meio de toda a confusão, você é uma das coisas mais bonitas que encontrei.
-
-  Saudades.`,
-  },
-
-
-  {
-    titulo: "Carta 11 - É o Chaol e o Girassol",
+    titulo: "Carta 7 - É o Chaol e o Girassol",
     texto: `Ana,
 
   "Eu passei tanto tempo me odiando, Yrene, odiando o que me tornei. Mas quando olho para você, só consigo ver esperança. Você é a minha luz no meio da escuridão."
@@ -165,20 +94,7 @@ Sinto sua falta.`,
   },
 
   {
-    titulo: "Carta 12 - É o Lorcan",
-    texto: `Ana,
-
-  "Eu vivi por séculos no escuro, servindo a obrigações e guerras que não eram minhas. Mas por você, Elide... por você eu queimaria o mundo inteiro só para garantir que estivesse a salvo."
-
-  Eu entendo um pouco.
-
-  Porque, quando se trata de você, eu vou onde for preciso.
-
-  Saudades.`,
-  },
-
-  {
-    titulo: "Carta 13 - Vênus",
+    titulo: "Carta 8 - Vênus",
     texto: `Ana, Vênus é sobre você.
 
      "I thought I'd never find you
@@ -195,26 +111,9 @@ Sinto sua falta.`,
   
   Sinto sua falta.`,
   },
-  
-  {
-    titulo: "Carta 14 - Ser divino",
-    texto: `Ana, sinto que escrevo cartas a um ser divino.
-
-Tudo em mim mudou desde que você disse que estava tão apaixonada por mim quanto eu por você. 
-
-Isso me fez lembrar de você sussurrando atrás de mim sobre alianças depois do boliche (eu ouvi).
-
-Eu realmente sou exagerada e já tinha escolhido qual seria. 
-
-Você vive nos meus pensamentos e me recuso a pensar que você não se lembre de nada.
-
-Continua sendo você. 
-
-Saudades,`,
-  },
 
   {
-    titulo: "Carta 15 - Ana Noctis",
+    titulo: "Carta 9 - Ana Noctis",
     texto: `Ana,
 
 Ana Noctis significa “A Noite de Ana”.
@@ -231,7 +130,7 @@ Cada estrela, cada carta e cada detalhe foi feito pensando em você. Algumas coi
   },
 
   {
-    titulo: "Carta 16 - Ponte e luz",
+    titulo: "Carta 10 - Ponte e luz",
     texto: `Ana,
 
 "Seja ponte, seja luz. Quando o ferro derreter, quando as flores brotarem de campos de sangue... Que a terra seja testemunha e volte para casa."
@@ -243,7 +142,7 @@ Estivemos aqui aprendendo ser.
   },
 
   {
-    titulo: "Carta 17 - Você",
+    titulo: "Carta 11 - Você",
     texto: `Ana,
 
 "Você também me faz querer viver, Aelin Galathynius. Não existir, viver.
@@ -256,25 +155,90 @@ Mas acho que o tempo todo, durante todos aqueles séculos, só estava procurando
   },
 
   {
-    titulo: "Carta 18 - Rowan",
+    titulo: "Carta 12 - Rowan",
     texto: `Ana,
 
 "Eu amo você. Não há limite para o que posso dar, não preciso de tempo. Mesmo quando este mundo for um sussurro de terra esquecido em meio às estrelas, amarei você."
 
-É isso.
-
-Não existe ego. 
+É isso. 
 
 Não existe nada além disso.`,
   },
-  
+
+  {
+    titulo: "Carta 13 - É o Rowan",
+    texto: `Ana,
+
+"Fiquei pensando em como você poderia jamais saber que eu senti sua falta com apenas um oceano entre nós. Mas se fosse a morte nos separando... Eu encontraria você. Não me importa quantas regras quebraria. Ainda que eu mesmo precisasse conseguir as três chaves para então abrir um portão, eu a encontraria de novo. Sempre."
+
+Não importa o que aconteça, eu ainda tento te encontrar.
+
+`,
+  },
+
+  {
+    titulo: "Carta 14 - Aelin e as estrelas",
+    texto: `Ana,
+
+"Ainda que a noite seja escura, as estrelas continuam lá."
+
+Apesar da distância, algumas coisas não mudam. Você continua lá, e eu continuo lembrando de você.
+
+Saudades.`,
+  },
+
+  {
+    titulo: "Carta 15 - É a Elena",
+    texto: `Ana,
+
+"Possa o seu coração ser o seu guia e a sua coragem a sua força."
+
+Nossas conversas me mostraram que você sempre soube ser forte e seguir o seu próprio caminho.
+
+Parte da admiração que sinto por você vem disso.
+
+Sinto sua falta.`,
+  },
+
+  {
+    titulo: "Carta 16 - É o Rowan",
+    texto: `Ana,
+
+"Eu lhe dei meu coração. Não sobrou nada para entregar a mais ninguém."
+
+É exatamente assim. Você ficou com tudo.
+
+Saudades.`,
+  },
+
+  {
+    titulo: "Carta 17 - É o Cassian",
+    texto: `Ana,
+
+"Não tenho nenhum arrependimento neste mundo. Mas se eu tivesse... seria não ter tido tempo suficiente com você."
+
+Sinto sua falta.`,
+  },
+
+  {
+    titulo: "Carta 18 - É o Rhysand",
+    texto: `Ana,
+
+"Então, descobri o seu nome. Ouvir você pronunciá-lo foi como a resposta para uma pergunta que eu fazia havia quinhentos anos. Foi como se o próprio mundo tido sido reajustado por causa disso. Como se eu não tivesse passado os últimos quinhentos anos vivendo, mas simplesmente esperando."
+
+Não foram quinhetos anos, foram duas semanas.
+
+Uma semana pra descobrir seu nome e outra pra criar coragem pra falar com você (e se atropelar nas palavras).
+
+Me deram a oportunidade perfeita.
+`,
+  },
+
   {
     titulo: "O segredo do céu",
     texto: `Ana,
 
 Existe um segredo escondido no céu.
-
-Boa sorte encontrando. :)
 
 ~~ Dica: clique em uma estrela! ~~`,
   },

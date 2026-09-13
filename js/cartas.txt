@@ -1,0 +1,89 @@
+{
+    titulo: "Carta 4 - Sou eu",
+    texto: `Ana,
+
+      Os dias são tão lentos sem você. Parece que ando acumulando histórias sem sentido...
+  
+      Todos os dias sinto sua falta e espero que tudo seja diferente no fim de cada um deles.
+  
+      Que mundo louco, não é?
+  
+      A verdade é que estou enlouquecendo de saudades.
+  
+      Seu cheiro, seu beijo, sua voz...`,
+  },
+
+  {
+    titulo: "Carta 7 - É a Elide",
+    texto: `Ana, é um tanto quanto:
+  
+    "Eu não me importo com o seu passado ou com o que os outros dizem. Eu amo você, Lorcan, exatamente como você é. E vou escolher você todas as vezes."
+  
+    Adorava ouvir você falar e rir das suas histórias passadas. E sinto ódio por cada um que te machucou.
+  
+      Às vezes fico pensando...
+  
+      Eu continuo te escolhendo e não quero ser só uma passagem.
+  
+      Estou com saudades.`,
+  },
+
+  {
+    titulo: "Carta 10 - É o Dorian",
+    texto: `Ana,
+
+  "Você não é um monstro, Bruxa. E mesmo se fosse... eu ainda assim não conseguiria afastar meus olhos de você. Você é a tempestade mais bonita que já vi."
+
+  Eu nunca enxerguei você pelas coisas que deram errado.
+
+  Eu enxerguei você. Eu sinto você.
+
+  E, mesmo no meio de toda a confusão, você é uma das coisas mais bonitas que encontrei.
+
+  Saudades.`,
+  },
+
+  {
+    titulo: "Carta 12 - É o Lorcan",
+    texto: `Ana,
+
+  "Eu vivi por séculos no escuro, servindo a obrigações e guerras que não eram minhas. Mas por você, Elide... por você eu queimaria o mundo inteiro só para garantir que estivesse a salvo."
+
+  Eu entendo um pouco.
+
+  Porque, quando se trata de você, eu vou onde for preciso.
+
+  Saudades.`,
+  },
+
+  {
+    titulo: "Carta 1 - Ser divino",
+    texto: `Ana, sinto que escrevo cartas a um ser divino.
+
+Tudo em mim mudou desde que você disse que estava tão apaixonada por mim quanto eu por você. 
+
+Isso me fez lembrar de você sussurrando atrás de mim sobre alianças depois do boliche (eu ouvi).
+
+Eu realmente sou exagerada e já tinha escolhido qual seria. 
+
+Você vive nos meus pensamentos e me recuso a pensar que você não se lembre de nada.
+
+Continua sendo você. 
+
+Saudades,`,
+  },
+
+  {
+    titulo: "Carta 9 - É a Lysandra",
+    texto: `Ana,
+  
+  "Eu mudo de pele todos os dias e posso ser quem eu quiser, mas com você, Aedion... com você eu finalmente posso ser apenas eu mesma. E essa versão de mim te ama."
+
+  Talvez seja isso que eu mais gostava quando estava com você.
+
+  Eu não precisava ser nada além de mim.
+
+  E espero que, em algum lugar, você ainda se lembre dessa versão minha.
+
+  Saudades.`,
+  },
