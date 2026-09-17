@@ -1,5 +1,5 @@
 const cartas = [
-  {
+  /*{
     titulo: "Carta 1 - Estrelas",
     texto: `Ana,
 
@@ -241,5 +241,12 @@ Me deram a oportunidade perfeita.
 Existe um segredo escondido no céu.
 
 ~~ Dica: clique em uma estrela! ~~`,
+  },*/
+{
+    titulo: "",
+    texto: `Ana,
+
+Obrigada.`,
   },
+  
 ];
