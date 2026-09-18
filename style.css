@@ -865,7 +865,7 @@ footer p {
 }
 
 .intro-text {
-  margin: 0 0 35px;
+  margin: 0 0 30px;
   color: #000;
   font-size: 16px;
   line-height: 1.8;
@@ -878,6 +878,8 @@ footer p {
 
 .volume-text {
   margin-top: 50px;
+  color: #dbaf50;
+
 }
 
 #start-experience {

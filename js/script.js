@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // FRASE
   // =====================================================
 
-  const frases = ["Até que a escuridão nos reivindique!"];
+  const frases = ["Até que a última estrela deste céu morra."];
   const texto = document.getElementById("texto");
 
   let frase = 0;
