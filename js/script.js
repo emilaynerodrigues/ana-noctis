@@ -1059,7 +1059,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     criarBrilhoEspada();
     aumentarBrilhoBaseEspada();
-    ativarEstrelaSecreta();
+    //ativarEstrelaSecreta();
 
     // ===================================================
     // CONSTELAÇÕES
