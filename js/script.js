@@ -670,7 +670,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ESTRELA SECRETA
   // =====================================================
 
-  function ativarEstrelaSecreta() {
+/*  function ativarEstrelaSecreta() {
     const estrela = document.getElementById("estrela-branca16");
 
     if (!estrela) return;
@@ -705,7 +705,7 @@ document.addEventListener("DOMContentLoaded", () => {
           });
       }
     });
-  }
+  } */
   // =====================================================
   // CARTA
   // =====================================================
