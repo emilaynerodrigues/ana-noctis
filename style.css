@@ -879,7 +879,16 @@ footer p {
 .volume-text {
   margin-top: 50px;
   color: #dbaf50;
+}
 
+.girassol-text {
+  position: absolute;
+  left: 50%;
+  bottom: -75%;
+  transform: translate(-50%);
+  font-size: 20px;
+  color: #dbaf50;
+  text-decoration: none;
 }
 
 #start-experience {
@@ -917,8 +926,8 @@ footer p {
 }
 
 .ana-estrela {
-  color: #DBAF50;
-  font-size: 0.55em !important; 
+  color: #dbaf50;
+  font-size: 0.55em !important;
   margin-left: 5px;
   margin-right: 5px;
   vertical-align: middle;
