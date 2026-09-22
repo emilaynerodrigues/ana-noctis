@@ -1,28 +1,19 @@
 const cartas = [
-  /*{
+  {
     titulo: "Carta 1 - Estrelas",
     texto: `Ana,
 
 "Até que todas as estrelas se apaguem. Até que o tempo pare. Eu sou seu."
 
 Tudo continua sendo sobre -você-. Você ainda tem -tudo- de mim.
-
-Meu desejo ainda é: "Ela, ela e ela".
-
-Sinto sua falta.`,
+`,
   },
 
   {
     titulo: "Carta 2 - É a Aelin",
     texto: `Ana,
 
-    "Eu te amo. Além das estrelas, além do tempo, além da própria vida. Eu pertenço a você, e você pertence a mim. Não há nada neste mundo, ou em qualquer outro, que possa mudar isso."
-
-    Me identifico um pouco com ela, porque tudo em mim é seu.
-
-    Que mundo louco, não é?
-
-    Saudades.`,
+    "Eu te amo. Além das estrelas, além do tempo, além da própria vida. Eu pertenço a você, e você pertence a mim. Não há nada neste mundo, ou em qualquer outro, que possa mudar isso."`,
   },
 
   {
@@ -31,9 +22,7 @@ Sinto sua falta.`,
 
     "Eu a reivindico. Aelin Galathynius. Como minha parceira, minha rainha e minha igual. Se eu tiver que quebrar o mundo para mantê-la a meu lado, eu o farei. Não há vida para mim sem você."
 
-    A paixão tem esse poder de deixar tudo mais intenso. Por isso, minha vida está do avesso sem você.      
-
-    Saudades!`,
+    A paixão tem esse poder de deixar tudo mais intenso. Por isso, minha vida está do avesso sem você.`,
   },
 
   {
@@ -43,8 +32,6 @@ Sinto sua falta.`,
     "Eu te encontrei. No escuro, na tempestade, na dor mais profunda... Eu te encontrei e você me encontrou. Eu sou sua, Rowan. Sempre fui, desde o momento em que nossas almas se reconheceram."
   
       Será loucura pensar que estávamos destinadas a nos encontrar em meio ao caos da vida?
-  
-      Acredito que não. Eu já sonhava com você.
 
       Você é meu sonho, lembra?
   
@@ -81,9 +68,7 @@ Sinto sua falta.`,
 
   Você foi a luz em uma época em que eu nem sabia direito que estava no escuro.
 
-  Talvez seja por isso que seja tão difícil...
-
-  Eu não vou te esquecer e preciso de você perto.
+  Eu não vou te esquecer.
 
   Você é meu segundo girassol, lembra? 🌻
 
@@ -106,27 +91,8 @@ Sinto sua falta.`,
   O universo é enorme. A vida é enorme. Poderíamos ter ido para lugares completamente diferentes.
 
   Mas, por algum motivo, nos encontramos.
-
-  Tem sido difícil fingir que você não me atravessou.
   
   Sinto sua falta.`,
-  },
-
-  {
-    titulo: "Carta 9 - Ana Noctis",
-    texto: `Ana,
-
-Ana Noctis significa “A Noite de Ana”.
-
-Eu fiz esse site porque não sabia mais onde colocar tudo isso que sinto. Então coloquei aqui.
-
-Cada estrela, cada carta e cada detalhe foi feito pensando em você. Algumas coisas são lembranças, grande parte são referências, mas nada está aqui por acaso.
-
-É sobre você e pra você.
-
-É a sua noite. 🌙
-
-    `,
   },
 
   {
@@ -155,17 +121,6 @@ Mas acho que o tempo todo, durante todos aqueles séculos, só estava procurando
   },
 
   {
-    titulo: "Carta 12 - Rowan",
-    texto: `Ana,
-
-"Eu amo você. Não há limite para o que posso dar, não preciso de tempo. Mesmo quando este mundo for um sussurro de terra esquecido em meio às estrelas, amarei você."
-
-É isso. 
-
-Não existe nada além disso.`,
-  },
-
-  {
     titulo: "Carta 13 - É o Rowan",
     texto: `Ana,
 
@@ -183,21 +138,7 @@ Não importa o que aconteça, eu ainda tento te encontrar.
 "Ainda que a noite seja escura, as estrelas continuam lá."
 
 Apesar da distância, algumas coisas não mudam. Você continua lá, e eu continuo lembrando de você.
-
-Saudades.`,
-  },
-
-  {
-    titulo: "Carta 15 - É a Elena",
-    texto: `Ana,
-
-"Possa o seu coração ser o seu guia e a sua coragem a sua força."
-
-Nossas conversas me mostraram que você sempre soube ser forte e seguir o seu próprio caminho.
-
-Parte da admiração que sinto por você vem disso.
-
-Sinto sua falta.`,
+`,
   },
 
   {
@@ -233,20 +174,4 @@ Uma semana pra descobrir seu nome e outra pra criar coragem pra falar com você 
 Me deram a oportunidade perfeita.
 `,
   },
-
-  {
-    titulo: "O segredo do céu",
-    texto: `Ana,
-
-Existe um segredo escondido no céu.
-
-~~ Dica: clique em uma estrela! ~~`,
-  },*/
-{
-    titulo: "",
-    texto: `Ana,
-
-Obrigada.`,
-  },
-  
 ];
