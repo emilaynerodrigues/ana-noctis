@@ -283,6 +283,29 @@ Parte da admiração que sinto por você vem disso.
 
 Sinto sua falta.`,
   },
+  {
+    titulo: "Carta 23 - É a Nehemia",
+    texto: `Ana,
+
+"Você tem um coração de fogo, Elentiya. Não deixe que ninguém o apague."
+
+O desejo de continuar está ai dentro dessa sua cabeça agitada. É por isso que você está aqui.
+
+Você sempre será muito.
+
+Saudades.`,
+  },
+
+  {
+    titulo: "Carta 24 - É o Fenrys",
+    texto: `Ana,
+
+"Estou aqui. Estou com você."
+
+Mesmo de longe, mesmo no silêncio dos dias, isso continua sendo verdade.
+
+Sinto sua falta.`,
+  },
 
   {
     titulo: "O segredo do céu",
